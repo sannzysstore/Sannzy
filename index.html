@@ -1,0 +1,3939 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sannzy Store — Premium Apps, Streaming & Digital Needs</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<meta name="description" content="Sannzy Store — Premium apps dan kebutuhan digital. Order melalui Auto Order, Telegram Bot, atau WhatsApp Admin.">
+
+<style>
+  /* =========================================
+   BACKGROUND SANNZY STORE
+   ========================================= */
+
+.sannzy-moving-bg{
+    position:fixed;
+    inset:0;
+    width:100%;   
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+    opacity:.14;
+
+    -webkit-mask-image:linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000 10%,
+        #000 90%,
+        transparent 100%
+    );
+
+    mask-image:linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000 10%,
+        #000 90%,
+        transparent 100%
+    );
+}
+
+.sannzy-row{
+    position:absolute;
+    left:-20%;
+
+    width:150%;
+
+    white-space:nowrap;
+
+    font-size:clamp(
+        90px,
+        10vw,
+        200px
+    );
+
+    font-weight:900;
+
+    letter-spacing:-0.08em;
+
+    line-height:.75;
+
+    color:rgba(
+        165,
+        105,
+        235,
+        .12
+    );
+
+    text-transform:uppercase;
+
+    transform:rotate(-10deg);
+
+    user-select:none;
+
+    will-change:transform;
+}
+
+
+/* BARIS BACKGROUND */
+
+.sannzy-row.row-1{
+    top:1%;
+    animation:sannzyLeft 26s linear infinite;
+}
+
+.sannzy-row.row-2{
+    top:33%;
+    animation:sannzyRight 31s linear infinite;
+}
+
+.sannzy-row.row-3{
+    top:53%;
+    animation:sannzyLeft 28s linear infinite;
+}
+
+.sannzy-row.row-4{
+    top:90%;
+    animation:sannzyRight 34s linear infinite;
+}
+
+}
+
+
+/* GERAK KE KIRI */
+
+@keyframes sannzyLeft{
+
+    from{
+        transform:
+            translateX(0)
+            rotate(-10deg);
+    }
+
+    to{
+        transform:
+            translateX(-18%)
+            rotate(-10deg);
+    }
+
+}
+
+
+/* GERAK KE KANAN */
+
+@keyframes sannzyRight{
+
+    from{
+        transform:
+            translateX(-18%)
+            rotate(-10deg);
+    }
+
+    to{
+        transform:
+            translateX(0)
+            rotate(-10deg);
+    }
+
+}
+
+
+/* =========================================
+   KONTEN DI ATAS BACKGROUND
+   ========================================= */
+
+.site-header,
+main,
+footer,
+.music-player{
+    position:relative;
+    z-index:2;
+}
+
+
+/* =========================================
+   LOGO KANAN HERO
+   WARNA BERGANTI
+   ========================================= */
+
+.sannzy-color-logo{
+
+    color:transparent !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f4b82b 0%,
+            #ff8a26 12%,
+            #e94358 25%,
+            #a05ce9 40%,
+            #7e4bd1 52%,
+            #bc5cff 65%,
+            #ed4774 77%,
+            #ff9d2d 89%,
+            #f4b82b 100%
+        );
+
+    background-size:400% 100%;
+
+    background-position:0% 50%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+        0 0 25px rgba(166,94,232,.14),
+        0 0 45px rgba(235,69,140,.08);
+
+    animation:sannzyLogoColor 8s linear infinite;
+}
+
+.sannzy-color-logo span{
+    color:transparent !important;
+    -webkit-text-fill-color:transparent;
+}
+
+
+@keyframes sannzyLogoColor{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+/* =========================================
+   GLOW DI BELAKANG LOGO
+   ========================================= */
+
+.hero-art .glow{
+    animation:sannzyGlow 6s ease-in-out infinite;
+}
+
+@keyframes sannzyGlow{
+
+    0%{
+        transform:scale(.96);
+        opacity:.55;
+    }
+
+    50%{
+        transform:scale(1.06);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(.96);
+        opacity:.55;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media(max-width:720px){
+
+    .sannzy-moving-bg{
+        opacity:.08;
+    }
+
+    .sannzy-row{
+        font-size:90px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCE MOTION
+   ========================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    .sannzy-row,
+    .sannzy-color-logo,
+    .hero-art .glow{
+
+        animation:none !important;
+
+    }
+
+}
+
+:root{
+  --bg:#0d0913;
+  --bg2:#130d1d;
+  --panel:#1b1226;
+  --panel2:#21162e;
+  --line:rgba(195,146,255,.20);
+  --line2:rgba(195,146,255,.34);
+  --white:#faf7ff;
+  --muted:#b6a8c4;
+  --purple:#9c5ee6;
+  --purple2:#b67cff;
+  --green:#32d19a;
+  --shadow:0 20px 60px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  color:var(--white);
+  background:
+    radial-gradient(circle at 75% 23%,rgba(132,72,196,.16),transparent 28%),
+    radial-gradient(circle at 14% 70%,rgba(102,55,150,.10),transparent 30%),
+    linear-gradient(180deg,#0f0a16 0%,#0b0810 100%);
+}
+body:before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:-1;
+  opacity:.04;
+  background-image:radial-gradient(rgba(255,255,255,.8) 0.7px,transparent .7px);
+  background-size:5px 5px;
+}
+.container{width:min(1450px,calc(100% - 48px));margin:auto}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.section{padding:105px 0}
+
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:104px;
+  background:rgba(13,9,19,.94);
+  border-bottom:1px solid rgba(195,146,255,.12);
+}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{
+  display:inline-flex;
+  align-items:center;
+  padding:10px 13px;
+  border:1px solid #d4b3fa;
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:-1.6px;
+  line-height:1;
+}
+.logo span{color:var(--purple2)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:15px;font-weight:600;color:#cabbd6}
+.nav-links a:hover{color:#fff}
+.nav-auto{
+  padding:13px 16px;
+  border:1px solid var(--line2);
+  border-radius:11px;
+  background:#1b1125;
+  color:#e8d8f8!important;
+}
+.menu{
+  display:none;
+  border:1px solid var(--line);
+  background:#1a1123;
+  color:#fff;
+  padding:9px 11px;
+  border-radius:9px;
+}
+
+.hero{
+  padding-top:104px;
+  min-height:700px;
+  display:flex;
+  align-items:center;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+.eyebrow,.label{
+  color:#b77df2;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+.hero h1{
+  margin:30px 0 40px;
+  font-size:82px;
+  line-height:.92;
+  letter-spacing:-5px;
+  font-weight:900;
+}
+.hero h1 span{color:var(--purple2)}
+.hero h2{
+  margin:0 0 20px;
+  max-width:720px;
+  font-size:31px;
+  line-height:1.35;
+  letter-spacing:-1.1px;
+}
+.hero h2 span{color:#c59dff}
+.hero p{
+  max-width:720px;
+  margin:7px 0;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.8;
+}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:16px 22px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  font-size:14px;
+  font-weight:800;
+}
+.btn-primary{
+  background:linear-gradient(135deg,#a966ee,#7d47c4);
+  box-shadow:0 13px 34px rgba(143,77,214,.24);
+}
+.btn-secondary{background:#251735}
+.btn-ghost{background:transparent}
+.status{display:flex;align-items:center;gap:9px;margin-top:26px;color:#c5b7d0;font-size:14px}
+.dot{width:8px;height:8px;background:#8ae6bc;border-radius:50%;box-shadow:0 0 14px #8ae6bc}
+
+.hero-art{
+  min-height:540px;
+  position:relative;
+  display:grid;
+  place-items:center;
+}
+.glow{
+  position:absolute;
+  width:470px;height:470px;border-radius:50%;
+  background:radial-gradient(circle,rgba(153,88,231,.23),transparent 68%);
+}
+.hero-logo{
+  position:relative;
+  font-size:75px;
+  line-height:1;
+  letter-spacing:-5px;
+  font-weight:900;
+  transform:skew(-4deg);
+}
+.hero-logo span{color:var(--purple2)}
+.hero-domain{
+  position:absolute;
+  top:61%;
+  color:#a99bb7;
+  font-size:13px;
+  letter-spacing:2px;
+}
+.hero-stat{
+  position:absolute;
+  right:1%;
+  bottom:0;
+  display:flex;
+  gap:17px;
+  align-items:center;
+}
+.hero-stat strong{font-size:40px;letter-spacing:-2px}
+.hero-stat span{font-size:13px;color:#a99bb7;line-height:1.5}
+
+.stats{padding:10px 0 75px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.stat-card{
+  min-height:140px;
+  padding:29px 25px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:linear-gradient(135deg,rgba(34,22,47,.92),rgba(21,14,30,.92));
+  box-shadow:var(--shadow);
+}
+.stat-card strong{display:block;font-size:25px;letter-spacing:-.7px;margin-bottom:14px}
+.stat-card span{font-size:14px;color:#a99ab7}
+
+.section-head{
+  display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:end;
+  margin-bottom:38px;
+}
+.section-head h2{
+  margin:22px 0 0;
+  font-size:50px;line-height:1.04;letter-spacing:-2.7px;
+}
+.section-head p{margin:0;color:var(--muted);font-size:16px;line-height:1.8}
+
+.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel{
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(34,22,47,.93),rgba(20,13,28,.93));
+  box-shadow:var(--shadow);
+}
+.service{padding:36px;min-height:305px}
+.icon{
+  width:47px;height:47px;
+  display:grid;place-items:center;
+  border:1px solid var(--line2);
+  border-radius:12px;
+  background:#251635;
+  color:#d4a8ff;
+  font-weight:900;
+  margin-bottom:22px;
+}
+.service h3{margin:0 0 12px;font-size:24px}
+.service p{margin:0;color:var(--muted);line-height:1.75}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:23px}
+.chips span{
+  padding:8px 11px;
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(195,146,255,.14);
+  border-radius:8px;
+  font-size:12px;color:#c8bbd4;
+}
+
+.product-section{background:rgba(24,15,33,.14)}
+.center{text-align:center}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.product{
+  padding:17px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(34,22,47,.95),rgba(20,13,28,.93));
+}
+.product-art{
+  height:160px;
+  border-radius:11px;
+  display:grid;
+  place-items:center;
+  margin-bottom:18px;
+  font-weight:900;
+  font-size:58px;
+}
+.net{background:linear-gradient(135deg,#25090e,#10090d);color:#df2935}
+.spot{background:linear-gradient(135deg,#0b2b20,#0a1410);color:#65d49a}
+.can{background:linear-gradient(135deg,#2a1853,#15203d);color:#ae8aff}
+.cap{background:linear-gradient(135deg,#16171c,#303038);color:#fff}
+.chatgpt{background:linear-gradient(135deg,#11231e,#0e1411);color:#8bdfb9;font-size:37px}
+.gem{background:linear-gradient(135deg,#171b3c,#25153d);color:#9cadff}
+.product h3{margin:0;font-size:18px}
+.product p{margin:6px 0 15px;color:#9f91ad;font-size:12px}
+.product a{color:#c598ff;font-size:13px;font-weight:700}
+
+.center-button{margin-top:30px;display:flex;justify-content:center}
+
+.why-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.why,.quick{padding:38px}
+.why h2{margin:22px 0;font-size:48px;letter-spacing:-2.5px;line-height:1.04}
+.why>p{color:var(--muted);line-height:1.8}
+.features{display:grid;gap:10px;margin-top:28px}
+.feature{
+  display:flex;gap:15px;padding:16px;
+  border:1px solid rgba(195,146,255,.13);
+  border-radius:12px;
+  background:rgba(255,255,255,.015);
+}
+.feature-num{color:#bb85f5;font-weight:900;min-width:28px}
+.feature b{display:block;font-size:14px}
+.feature small{display:block;margin-top:4px;color:#9e90aa;font-size:11px;line-height:1.45}
+
+.quick h3{font-size:28px;margin:21px 0 23px}
+.quick-link{
+  display:grid;grid-template-columns:36px 1fr 20px;gap:12px;align-items:center;
+  padding:15px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(255,255,255,.015);
+  margin-top:10px;
+}
+.quick-link:hover{background:#251735}
+.quick-link .qicon{
+  width:36px;height:36px;display:grid;place-items:center;
+  border-radius:9px;background:#38204c;color:#d4a7ff;
+}
+.quick-link b{display:block;font-size:14px}
+.quick-link small{display:block;color:#9e90aa;margin-top:4px;font-size:11px}
+.quick-link i{font-style:normal;color:#bd8df1}
+
+.contact{padding-top:90px}
+.contact-panel{padding:48px}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.contact h2{font-size:48px;line-height:1.04;letter-spacing:-2.4px;margin:22px 0}
+.contact p{color:var(--muted);line-height:1.8}
+.contact-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-card{
+  display:grid;grid-template-columns:38px 1fr 18px;gap:11px;align-items:center;
+  padding:20px;border:1px solid var(--line);border-radius:12px
+}
+.contact-card .cicon{
+  width:35px;height:35px;display:grid;place-items:center;border-radius:9px;
+  background:#2d1c3c;color:#d0a1ff
+}
+.contact-card b{display:block;font-size:14px}
+.contact-card small{display:block;color:#9d8faa;margin-top:4px;font-size:11px}
+.contact-card i{font-style:normal;color:#b98af0}
+.contact-card.auto{background:#20152c}
+.contact-card.wa{background:#12271f}
+
+.faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:65px}
+.faq-grid h2{font-size:47px;line-height:1.05;letter-spacing:-2.4px;margin:22px 0}
+details{border-bottom:1px solid var(--line);padding:23px 0}
+summary{
+  cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;gap:15px;
+  font-size:17px;font-weight:700
+}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:#b98cf0;font-size:22px}
+details[open] summary:after{content:"−"}
+details p{color:var(--muted);line-height:1.75;margin:14px 0 0}
+
+footer{border-top:1px solid var(--line);margin-top:75px;padding:50px 0 30px}
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:25px}
+.footer-links{display:flex;gap:22px;color:#b6a7c2;font-size:14px}
+.footer-bottom{
+  display:flex;justify-content:space-between;
+  border-top:1px solid var(--line);
+  margin-top:32px;padding-top:25px;color:#8f819b;font-size:13px
+}
+
+.music-player{
+  position:fixed;right:22px;bottom:22px;z-index:100;
+  width:310px;padding:14px;
+  background:rgba(31,20,43,.96);
+  border:1px solid rgba(195,146,255,.34);
+  border-radius:17px;
+  box-shadow:0 18px 55px rgba(0,0,0,.42)
+}
+.music-row{display:flex;align-items:center;gap:11px}
+.music-icon{
+  width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  background:#372148;color:#d5a7ff;font-size:20px
+}
+.music-info{flex:1;min-width:0}
+.music-info b{display:block;font-size:13px}
+.music-info small{display:block;color:#9e90aa;font-size:10px;margin-top:4px}
+.music-btn{
+  width:36px;height:36px;border:0;border-radius:50%;
+  background:#8f56d0;color:#fff;cursor:pointer
+}
+.music-bar{height:3px;background:rgba(255,255,255,.08);margin-top:11px;border-radius:99px;overflow:hidden}
+.music-bar span{display:block;width:0;height:100%;background:#b77cf7}
+
+.mobile-menu{display:none}
+
+
+.nav-group{
+  padding:13px 15px;
+  border:1px solid rgba(255,72,155,.30);
+  border-radius:11px;
+  background:linear-gradient(135deg,rgba(102,35,78,.55),rgba(48,25,57,.65));
+  color:#ffacd7!important;
+}
+.btn-group{
+  background:rgba(68,35,71,.55);
+  border-color:rgba(255,92,169,.28);
+}
+.trust-section{
+  border-top:1px solid rgba(195,146,255,.08);
+  border-bottom:1px solid rgba(195,146,255,.08);
+  background:linear-gradient(180deg,rgba(13,9,18,.35),rgba(21,13,29,.15));
+}
+.trust-wrap{max-width:1240px;margin:auto}
+.trust-title{
+  margin:22px 0 36px;
+  font-size:52px;
+  line-height:1.02;
+  letter-spacing:-2.7px;
+  text-transform:uppercase;
+}
+.trust-copy{
+  max-width:1060px;
+  color:#a99bb7;
+  font-size:17px;
+  line-height:1.9;
+}
+.trust-points{
+  display:grid;
+  gap:20px;
+  margin-top:40px;
+}
+.trust-point{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  color:#a99bb7;
+  font-size:17px;
+  line-height:1.6;
+}
+.trust-point .diamond{
+  color:#f53693;
+  font-size:17px;
+  line-height:1.6;
+}
+.trust-point b{color:#e6d9ef}
+.qna-kicker{margin-top:0}
+.qna-subtitle{max-width:900px;color:#a99bb7;line-height:1.8}
+.answer-box{
+  padding:18px 0 3px;
+  color:#a99bb7;
+  line-height:1.8;
+}
+.answer-box b{color:#e8dcef}
+.answer-points{
+  margin:13px 0 2px 20px;
+  padding:0;
+}
+.answer-points li{margin:7px 0}
+.notice{
+  margin-top:18px;
+  padding:13px 15px;
+  border:1px solid rgba(195,146,255,.14);
+  border-radius:10px;
+  background:rgba(255,255,255,.02);
+  color:#9f91ad;
+  font-size:12px;
+  line-height:1.6;
+}
+
+@media(max-width:1050px){
+  .nav-links{gap:18px}
+  .hero-grid,.section-head,.why-grid,.contact-grid,.faq-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+  .container{width:calc(100% - 28px)}
+  .site-header{height:82px}
+  .logo{font-size:20px}
+  .nav-links{display:none}
+  .menu{display:block}
+  .mobile-menu{
+    position:absolute;top:70px;left:14px;right:14px;
+    padding:10px;border:1px solid var(--line);border-radius:13px;
+    background:rgba(25,16,35,.98)
+  }
+  .mobile-menu.open{display:grid}
+  .mobile-menu a{padding:12px;color:#d3c5dd}
+  .hero{padding-top:125px;min-height:auto;padding-bottom:70px}
+  .hero h1{font-size:55px;letter-spacing:-3px}
+  .hero h2{font-size:24px}
+  .hero-art{min-height:330px}
+  .hero-logo{font-size:45px;letter-spacing:-3px}
+  .hero-domain{top:62%}
+  .hero-stat{position:relative;right:auto;bottom:auto;margin-top:120px}
+  .stats-grid,.service-grid,.product-grid,.contact-list{grid-template-columns:1fr}
+  .section-head h2,.why h2,.contact h2,.faq-grid h2{font-size:37px}
+  .service,.why,.quick,.contact-panel{padding:27px}
+  .footer-top,.footer-bottom{flex-direction:column;align-items:flex-start}
+  .footer-links{flex-wrap:wrap}
+  .music-player{left:13px;right:13px;bottom:13px;width:auto}
+}
+
+/* =====================================================
+   LOGO KIRI
+   SANNZY = PUTIH
+   STORE = UNGU
+   ===================================================== */
+
+.sannzy-left-logo{
+    color:#ffffff !important;
+
+    background:none !important;
+
+    -webkit-text-fill-color:#ffffff !important;
+
+    text-shadow:none !important;
+
+    animation:none !important;
+}
+
+.sannzy-left-logo span{
+    color:#a66bea !important;
+
+    -webkit-text-fill-color:#a66bea !important;
+
+    background:none !important;
+}
+
+
+/* =====================================================
+   LOGO KANAN
+   WARNA MULTICOLOR SEPERTI REFERENSI
+   ===================================================== */
+
+.sannzy-right-logo{ 
+
+    color:transparent !important;
+
+    background:
+        linear-gradient(
+            90deg,
+
+            /* BIRU */
+            #0878ff 0%,
+            #123b9b 8%,
+
+            /* BIRU GELAP */
+            #151933 15%,
+
+            /* KUNING / EMAS */
+            #f5b51b 25%,
+            #ff9b16 34%,
+
+            /* ORANYE */
+            #ff6b16 42%,
+
+            /* MERAH */
+            #d72d3f 50%,
+            #b62e58 58%,
+
+            /* UNGU */
+            #8e42d7 67%,
+            #6231a8 75%,
+
+            /* MAGENTA */
+            #c13ce8 84%,
+
+            /* KUNING KEMBALI */
+            #f1b31c 94%,
+            #0878ff 100%
+        );
+
+    background-size:400% 100%;
+
+    background-position:0% 50%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+        0 0 20px rgba(148,76,226,.12),
+        0 0 35px rgba(255,113,37,.08);
+
+    animation:
+        sannzyRightColor
+        8s
+        linear
+        infinite;
+}
+
+
+.sannzy-right-logo span{
+
+    color:transparent !important;
+
+    -webkit-text-fill-color:transparent !important;
+
+}
+
+
+/* =====================================================
+   ANIMASI PERPINDAHAN WARNA LOGO KANAN
+   ===================================================== */
+
+@keyframes sannzyRightColor{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* =========================================
+   LANGUAGE SWITCHER
+   ========================================= */
+
+.language-switch{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:13px 17px;
+
+    border:1px solid var(--line);
+
+    border-radius:11px;
+
+    background:#21142d;
+
+    color:#e4d7ed;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+
+}
+
+.language-switch:hover{
+
+    background:#2b193b;
+
+    border-color:var(--line2);
+
+    transform:translateY(-1px);
+
+}
+
+.language-switch .language-slash{
+
+    color:#766680;
+
+}
+
+.language-switch.active{
+
+    border-color:#b678ef;
+
+    box-shadow:
+        0 0 18px rgba(160,91,229,.14);
+
+}
+
+@media(max-width:1050px){
+
+    .language-switch{
+
+        display:none;
+
+    }
+
+}
+
+.mobile-language{
+
+    width:100%;
+
+    padding:12px;
+
+    margin:4px 0;
+
+    text-align:left;
+
+    border:1px solid var(--line);
+
+    border-radius:10px;
+
+    background:#21142d;
+
+    color:#d5c6df;
+
+    cursor:pointer;
+
+}
+
+.mobile-language strong{
+
+    color:#bb82f2;
+
+}
+
+
+/* ==========================================
+   SANNZY STORE — MOBILE RESPONSIVE
+   Hanya berlaku untuk layar HP.
+   Tampilan desktop tidak diubah.
+   ========================================== */
+
+@media screen and (max-width: 720px) {
+
+  /* 1. HEADER MOBILE */
+  .site-header {
+    height: 76px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(13, 9, 19, 0.97);
+    backdrop-filter: blur(16px);
+  }
+
+  .site-header .container {
+    width: calc(100% - 28px);
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: clamp(17px, 4.8vw, 21px);
+    letter-spacing: -1px;
+    white-space: nowrap;
+  }
+
+  .menu {
+    display: block;
+    flex-shrink: 0;
+    font-size: 25px;
+  }
+
+  /* 2. MENU HAMBURGER */
+  .mobile-menu {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 14px;
+    right: 14px;
+    z-index: 1001;
+    display: none;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #160e20;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+  }
+
+  .mobile-menu.open {
+    display: grid;
+    gap: 4px;
+  }
+
+  .mobile-menu a {
+    display: block;
+    padding: 13px 12px;
+    border-radius: 9px;
+    color: #d8c9e5;
+    font-size: 15px;
+  }
+
+  .mobile-menu a:active {
+    background: rgba(166, 107, 234, 0.15);
+  }
+
+  /* 3. JARAK ANTAR BAGIAN */
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  section {
+    scroll-margin-top: 90px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 54px;
+    padding-bottom: 55px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+  }
+
+  .hero-copy {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .hero h1 {
+    margin: 16px 0 14px;
+    font-size: clamp(39px, 10vw, 55px);
+    line-height: 1.03;
+    letter-spacing: -2px;
+    overflow-wrap: anywhere;
+  }
+
+  .hero h2 {
+    font-size: clamp(21px, 5.5vw, 27px);
+    line-height: 1.4;
+    margin: 0 0 16px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* 4. TOMBOL HERO */
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 11px;
+    margin-top: 24px;
+  }
+
+  .actions a,
+  .actions button {
+    width: 100%;
+    min-height: 54px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .status {
+    margin-top: 20px;
+    line-height: 1.7;
+  }
+
+  /* 5. LOGO BESAR SEBELAH KANAN */
+  .hero-art {
+    width: 100%;
+    min-width: 0;
+    min-height: 270px;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .hero-logo {
+    max-width: 100%;
+    font-size: clamp(31px, 8.5vw, 45px);
+    letter-spacing: -2px;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-domain {
+    top: 60%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateX(-50%);
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .hero-stat {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 32px;
+  }
+
+  /* 6. GRID STATISTIK DAN PRODUK */
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .service-grid,
+  .product-grid,
+  .contact-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .stats-grid > *,
+  .service-grid > *,
+  .product-grid > *,
+  .contact-list > * {
+    min-width: 0;
+  }
+
+  /* 7. JUDUL SETIAP SECTION */
+  .section-head,
+  .why-grid,
+  .contact-grid,
+  .faq-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .section-head h2,
+  .why h2,
+  .contact h2,
+  .faq-grid h2 {
+    font-size: clamp(31px, 8vw, 39px);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+  }
+
+  .service,
+  .why,
+  .quick,
+  .contact-panel {
+    padding: 23px 20px;
+    min-width: 0;
+  }
+
+  /* 8. FAQ */
+  .faq-grid details summary {
+    gap: 12px;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .answer-box {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* 9. FOOTER */
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  /* 10. PEMUTAR MUSIK MELAYANG */
+  .music-player {
+    position: fixed;
+    left: auto;
+    right: 12px;
+    bottom: 12px;
+    z-index: 900;
+    width: min(310px, calc(100vw - 24px));
+    max-width: calc(100vw - 24px);
+  }
+
+  /* 11. KONTEN TIDAK MELEBAR KE SAMPING */
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  .hero-grid > *,
+  .section-head > *,
+  .why-grid > *,
+  .contact-grid > *,
+  .faq-grid > * {
+    min-width: 0;
+  }
+
+  /* 12. HORMATI PENGATURAN REDUKSI ANIMASI */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* HP KECIL */
+@media screen and (max-width: 380px) {
+  .stats-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 37px;
+    letter-spacing: -1.5px;
+  }
+
+  .service,
+  .why,
+  .quick,
+  .contact-panel {
+    padding: 20px 16px;
+  }
+}
+/* =========================================
+   SOCIAL MEDIA PRODUCT CARDS
+   ========================================= */
+
+.product-art.social-like {
+  background: linear-gradient(135deg, #35152e, #a83e79);
+  color: #ffb5dc;
+}
+
+.product-art.social-followers {
+  background: linear-gradient(135deg, #231d47, #7256c7);
+  color: #d4b8ff;
+}
+
+.product-art.social-views {
+  background: linear-gradient(135deg, #1c2848, #3975a8);
+  color: #b9dcff;
+}
+
+/* =========================================
+   TESTIMONIAL GALLERY
+   ========================================= */
+
+.testimonial-section {
+  overflow: hidden;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.testimonial-item {
+  min-width: 0;
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--panel);
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--line2);
+}
+
+.testimonial-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--panel2);
+}
+
+.testimonial-caption {
+  padding: 11px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 1050px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .testimonial-item {
+    border-radius: 10px;
+  }
+
+  .testimonial-caption {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   SOCIAL MEDIA PRICE POPUP
+   ========================================= */
+
+.social-product {
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.social-product:hover {
+  transform: translateY(-3px);
+  border-color: var(--line2);
+}
+
+.social-product:focus-visible {
+  outline: 2px solid var(--purple2);
+  outline-offset: 3px;
+}
+
+.social-price-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #c598ff;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: left;
+}
+
+.social-price-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  padding: 18px;
+}
+
+.social-price-modal.open {
+  display: grid;
+  place-items: center;
+}
+
+.social-price-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 3, 10, .82);
+  backdrop-filter: blur(7px);
+}
+
+.social-price-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(720px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 25px;
+  border: 1px solid var(--line2);
+  border-radius: 20px;
+  background: linear-gradient(145deg, #20132d, #100b18);
+  box-shadow: 0 25px 90px rgba(0, 0, 0, .6);
+}
+
+.social-price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-price-header h2 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+.social-price-header p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.social-price-close {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #2a1a39;
+  color: white;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.social-price-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.social-price-tab {
+  padding: 12px 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .025);
+  color: #c9bad8;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.social-price-tab.active {
+  background: linear-gradient(135deg, #a966ee, #7d47c4);
+  border-color: #bd8df1;
+  color: white;
+}
+
+.social-price-list {
+  display: grid;
+  gap: 10px;
+}
+
+.social-price-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(195, 146, 255, .17);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .025);
+}
+
+.social-price-platform {
+  display: block;
+  margin-bottom: 5px;
+  color: #c99bff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.social-price-name {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.social-price-note {
+  display: block;
+  margin-top: 5px;
+  color: #e9b7ff;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.social-price-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.social-price-amount {
+  color: #d7adff;
+  font-size: 17px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.social-price-order {
+  display: inline-block;
+  padding: 8px 11px;
+  border-radius: 8px;
+  background: #8f56d0;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.social-price-terms {
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid rgba(255, 190, 100, .2);
+  border-radius: 12px;
+  background: rgba(255, 190, 100, .045);
+  color: #c5b5d1;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.social-price-terms strong {
+  color: #e8d8f8;
+}
+
+.social-price-terms ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+body.social-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .social-price-modal {
+    padding: 10px;
+  }
+
+  .social-price-dialog {
+    padding: 17px;
+    border-radius: 15px;
+    max-height: 92vh;
+  }
+
+  .social-price-header h2 {
+    font-size: 21px;
+  }
+
+  .social-price-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .social-price-right {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .social-price-tabs {
+    gap: 5px;
+  }
+
+  .social-price-tab {
+    padding: 10px 3px;
+    font-size: 12px;
+  }
+}
+
+
+/* =====================================================
+   SANNZY STORE — DARK NAVY + BRIGHT BLUE THEME
+   Ditambahkan di akhir CSS untuk mengganti aksen ungu/pink
+   menjadi biru tanpa mengubah HTML maupun JavaScript.
+   ===================================================== */
+
+:root {
+  --bg: #061426;
+  --bg2: #0A1D35;
+  --panel: #0D2442;
+  --panel2: #123057;
+  --line: rgba(96, 165, 250, 0.22);
+  --line2: rgba(96, 165, 250, 0.40);
+  --white: #F4F8FF;
+  --muted: #A9BBD2;
+  --purple: #3B82F6;
+  --purple2: #60A5FA;
+  --green: #32D19A;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Latar utama dan tekstur */
+body {
+  color: var(--white);
+  background:
+    radial-gradient(circle at 75% 23%, rgba(37, 99, 235, 0.17), transparent 30%),
+    radial-gradient(circle at 14% 70%, rgba(29, 78, 216, 0.12), transparent 32%),
+    linear-gradient(180deg, #071629 0%, #030B17 100%) !important;
+}
+
+/* Header, menu desktop, dan menu HP */
+.site-header {
+  background: rgba(5, 16, 34, 0.96) !important;
+  border-bottom-color: rgba(96, 165, 250, 0.20) !important;
+}
+
+.menu,
+.mobile-menu,
+.nav-auto,
+.language-switch,
+.mobile-language {
+  background: #0B2341 !important;
+  border-color: rgba(96, 165, 250, 0.34) !important;
+  color: #EAF3FF !important;
+}
+
+.mobile-menu a,
+.nav-links a {
+  color: #C7D9F2 !important;
+}
+
+.nav-links a:hover,
+.mobile-menu a:hover,
+.mobile-menu a:active {
+  color: #60A5FA !important;
+  background: rgba(59, 130, 246, 0.12) !important;
+}
+
+.logo {
+  border-color: #60A5FA !important;
+}
+
+.logo span,
+.hero h1 span,
+.hero h2 span,
+.hero h2 span,
+.eyebrow,
+.label,
+.feature-num,
+.quick-link i,
+.contact-card i,
+summary:after {
+  color: #60A5FA !important;
+}
+
+/* Logo kiri dan logo besar kanan */
+.sannzy-left-logo {
+  color: #F4F8FF !important;
+  -webkit-text-fill-color: #F4F8FF !important;
+}
+
+.sannzy-left-logo span {
+  color: #60A5FA !important;
+  -webkit-text-fill-color: #60A5FA !important;
+  background: none !important;
+}
+
+/* LOGO KANAN: GRADASI BIRU BERANIMASI */
+.sannzy-right-logo {
+  color: transparent !important;
+  background-image: linear-gradient(
+    90deg,
+    #BFDBFE 0%,
+    #60A5FA 18%,
+    #2563EB 36%,
+    #1D4ED8 52%,
+    #38BDF8 68%,
+    #93C5FD 84%,
+    #BFDBFE 100%
+  ) !important;
+  /* Jangan pakai shorthand background di sini, agar animasi posisi tetap berjalan */
+  background-size: 400% 100%;
+  background-position: 0% 50%;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 0 22px rgba(59, 130, 246, 0.20) !important;
+  animation: sannzyRightColor 8s linear infinite !important;
+}
+
+.sannzy-right-logo span {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Logo warna yang memakai class sannzy-color-logo */
+.sannzy-color-logo {
+  color: transparent !important;
+  background-image: linear-gradient(
+    90deg,
+    #BFDBFE 0%,
+    #60A5FA 25%,
+    #2563EB 50%,
+    #38BDF8 75%,
+    #BFDBFE 100%
+  ) !important;
+  background-size: 400% 100%;
+  background-position: 0% 50%;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 0 22px rgba(59, 130, 246, 0.20) !important;
+  animation: sannzyLogoColor 8s linear infinite !important;
+}
+
+.sannzy-color-logo span {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Teks besar berjalan di background */
+.sannzy-row {
+  color: rgba(96, 165, 250, 0.12) !important;
+}
+
+/* Cahaya di belakang logo hero */
+.hero-art .glow,
+.glow {
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.25), transparent 70%) !important;
+}
+
+/* Tombol utama dan tombol pendamping */
+.btn-primary,
+.social-price-tab.active,
+.social-price-order,
+.music-btn {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8) !important;
+  color: #FFFFFF !important;
+  border-color: #60A5FA !important;
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.20) !important;
+}
+
+.btn-secondary,
+.btn-ghost,
+.btn-group {
+  background: #102B4D !important;
+  border-color: rgba(96, 165, 250, 0.34) !important;
+  color: #DBEAFE !important;
+}
+
+.nav-group {
+  background: linear-gradient(135deg, #123057, #0B203B) !important;
+  border-color: rgba(96, 165, 250, 0.38) !important;
+  color: #BFDBFE !important;
+}
+
+/* Statistik, layanan, produk, dan panel informasi */
+.stat-card,
+.panel,
+.product,
+.contact-panel {
+  background: linear-gradient(135deg, rgba(16, 42, 75, 0.97), rgba(8, 25, 47, 0.97)) !important;
+  border-color: rgba(96, 165, 250, 0.22) !important;
+}
+
+.product-section {
+  background: rgba(8, 25, 47, 0.35) !important;
+}
+
+.icon,
+.quick-link .qicon,
+.contact-card .cicon,
+.music-icon,
+.social-price-close {
+  background: #17365D !important;
+  color: #BFDBFE !important;
+  border-color: rgba(96, 165, 250, 0.30) !important;
+}
+
+.chips span,
+.feature,
+.quick-link,
+.contact-card,
+.notice,
+.testimonial-item {
+  border-color: rgba(96, 165, 250, 0.20) !important;
+}
+
+.chips span {
+  color: #C7D9F2 !important;
+}
+
+.feature,
+.quick-link,
+.contact-card,
+.notice,
+.social-price-item {
+  background: rgba(11, 32, 59, 0.88) !important;
+}
+
+.quick-link:hover,
+.contact-card.auto,
+.contact-card.wa {
+  background: #123057 !important;
+}
+
+/* Ganti aksen ungu pada gambar kartu produk menjadi biru.
+   Warna identitas Netflix, Spotify, CapCut, dan ChatGPT dipertahankan. */
+.product-art.can,
+.product-art.gem,
+.product-art.social-like,
+.product-art.social-followers,
+.product-art.social-views {
+  background: linear-gradient(135deg, #102B4D, #1D4ED8) !important;
+  color: #DBEAFE !important;
+}
+
+/* Link dan tombol harga produk media sosial */
+.product a,
+.social-price-button,
+.social-price-platform,
+.social-price-amount {
+  color: #60A5FA !important;
+}
+
+.social-product:focus-visible {
+  outline-color: #60A5FA !important;
+}
+
+/* Popup harga */
+.social-price-backdrop {
+  background: rgba(2, 8, 20, 0.86) !important;
+}
+
+.social-price-dialog {
+  background: linear-gradient(145deg, #102A4B, #061426) !important;
+  border-color: rgba(96, 165, 250, 0.38) !important;
+}
+
+.social-price-tab {
+  background: #0B203B !important;
+  border-color: rgba(96, 165, 250, 0.24) !important;
+  color: #C7D9F2 !important;
+}
+
+.social-price-tab.active {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8) !important;
+  border-color: #60A5FA !important;
+  color: #FFFFFF !important;
+}
+
+.social-price-item {
+  border-color: rgba(96, 165, 250, 0.20) !important;
+}
+
+.social-price-name {
+  color: #F4F8FF !important;
+}
+
+.social-price-note {
+  color: #BFDBFE !important;
+}
+
+.social-price-terms {
+  background: rgba(37, 99, 235, 0.08) !important;
+  border-color: rgba(96, 165, 250, 0.25) !important;
+  color: #A9BBD2 !important;
+}
+
+.social-price-terms strong {
+  color: #DBEAFE !important;
+}
+
+/* Bagian keunggulan, informasi, FAQ, dan footer */
+.trust-section {
+  background: linear-gradient(180deg, rgba(10, 29, 53, 0.55), rgba(3, 11, 23, 0.30)) !important;
+  border-top-color: rgba(96, 165, 250, 0.16) !important;
+  border-bottom-color: rgba(96, 165, 250, 0.16) !important;
+}
+
+.trust-point .diamond {
+  color: #60A5FA !important;
+}
+
+.trust-point b,
+.answer-box b {
+  color: #DBEAFE !important;
+}
+
+.trust-copy,
+.trust-point,
+.qna-subtitle,
+.answer-box {
+  color: #A9BBD2 !important;
+}
+
+footer,
+.footer-bottom,
+details {
+  border-color: rgba(96, 165, 250, 0.20) !important;
+}
+
+.footer-links {
+  color: #C7D9F2 !important;
+}
+
+/* Pemutar musik */
+.music-player {
+  background: rgba(8, 25, 47, 0.97) !important;
+  border-color: rgba(96, 165, 250, 0.32) !important;
+}
+
+.music-bar span {
+  background: #60A5FA !important;
+}
+
+/* Tombol kembali ke atas */
+#backTop {
+  background: #102B4D !important;
+  border-color: #3B82F6 !important;
+  color: #FFFFFF !important;
+}
+
+
+
+/* =========================================
+   CARA ORDER & KLAIM GARANSI
+   ========================================= */
+.order-warranty-section {
+  border-top: 1px solid rgba(96, 165, 250, 0.15);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.15);
+  background: linear-gradient(
+    180deg,
+    rgba(8, 25, 47, 0.35),
+    rgba(3, 11, 23, 0.18)
+  );
+}
+
+.order-method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.order-method-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid rgba(96, 165, 250, 0.22);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #102A4B, #08192F);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.order-card-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 20px;
+}
+
+.order-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(96, 165, 250, 0.34);
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.14);
+  color: #93C5FD;
+  font-size: 23px;
+}
+
+.order-card-kicker {
+  color: #60A5FA;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.order-card-title {
+  margin: 0 0 12px;
+  color: #F4F8FF;
+  font-size: 23px;
+  line-height: 1.25;
+}
+
+.order-card-copy {
+  margin: 0 0 18px;
+  color: #A9BBD2;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.order-steps {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  counter-reset: order-step;
+}
+
+.order-steps li {
+  position: relative;
+  min-height: 28px;
+  padding-left: 37px;
+  color: #C7D9F2;
+  font-size: 13px;
+  line-height: 1.7;
+  counter-increment: order-step;
+}
+
+.order-steps li::before {
+  content: counter(order-step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.15);
+  color: #93C5FD;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.order-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.order-card-actions .btn {
+  min-height: 44px;
+  padding: 12px 15px;
+  font-size: 12px;
+}
+
+.order-card-actions .btn-secondary,
+.order-card-actions .btn-ghost {
+  background: #102B4D;
+  border-color: rgba(96, 165, 250, 0.32);
+  color: #DBEAFE;
+}
+
+.order-warranty-note {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px solid rgba(96, 165, 250, 0.20);
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.07);
+  color: #A9BBD2;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.order-warranty-note strong {
+  color: #DBEAFE;
+}
+
+/* Hindari navbar penuh pada lebar laptop/tablet kecil. */
+.nav-links {
+  gap: clamp(12px, 1.25vw, 23px);
+}
+
+@media (max-width: 1120px) {
+  .nav-links a[href="#cara-order"] {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .order-method-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .order-method-card:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 720px) {
+  .order-method-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .order-method-card:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .order-method-card {
+    padding: 23px 20px;
+  }
+
+  .order-card-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .order-card-actions .btn {
+    width: 100%;
+  }
+}
+
+
+/* JARAK ANTARA KARTU DIGITAL NEEDS DAN SOCIAL MEDIA BOOST */
+.service-grid + .panel.service {
+  margin-top: 18px;
+}
+
+@media (max-width: 720px) {
+  .service-grid + .panel.service {
+    margin-top: 14px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- BACKGROUND SANNZY STORE -->
+<div class="sannzy-moving-bg" aria-hidden="true">
+
+    <div class="sannzy-row row-1">
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+    </div>
+
+    <div class="sannzy-row row-2">
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+    </div>
+
+    <div class="sannzy-row row-3">
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+    </div>
+
+    <div class="sannzy-row row-4">
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+    </div>
+
+    <div class="sannzy-row row-5">
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+        <span>SANNZY STORE</span>
+    </div>
+
+</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="#home" class="logo">SANNZY<span>STORE</span></a>
+
+    <nav class="nav-links">
+      <a href="#layanan">Layanan</a>
+      <a href="#aplikasi">Aplikasi</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="#cara-order">Cara Order</a>
+      <a href="#keunggulan">Kenapa Sannzy?</a>
+      <a href="#contact">Hubungi Kami</a>
+      <a class="nav-group" href="https://chat.whatsapp.com/GTVNI2EbMwV9gb2r5aKDPe" target="_blank" rel="noopener noreferrer" data-link="whatsapp-group">JOIN GRUP WA</a>
+      <a class="nav-auto" href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">AUTO ORDER ↗</a>
+    <button class="language-switch" id="languageSwitch" type="button">
+    <span id="languageCurrent">ID</span>
+    <span class="language-slash">/</span>
+    <span id="languageOther">EN</span>
+</button>
+    </nav>
+
+    <button class="menu" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#layanan">Layanan</a>
+    <a href="#aplikasi">Aplikasi</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#cara-order">Cara Order</a>
+    <a href="#keunggulan">Kenapa Sannzy?</a>
+    <a href="#contact">Hubungi Kami</a>
+    <button class="mobile-language" id="mobileLanguageSwitch" type="button">
+    Bahasa: <strong id="mobileLanguageCurrent">Indonesia</strong>
+</button>
+    <a href="https://chat.whatsapp.com/GTVNI2EbMwV9gb2r5aKDPe" target="_blank" rel="noopener noreferrer" data-link="whatsapp-group">◯ JOIN GRUP WA</a>
+    <a href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">⚡ AUTO ORDER</a>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">SANNZY STORE — PREMIUM DIGITAL NEEDS</div>
+      <div class="hero-logo sannzy-left-logo">
+    SANNZY<span>STORE</span>
+</div>
+      <h2>Premium apps & kebutuhan digital, <span>lebih mudah</span> dan praktis.</h2>
+      <p>Temukan berbagai aplikasi premium untuk streaming, design, AI, produktivitas, editing, hingga kebutuhan social media dalam satu tempat.</p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">⚡ Auto Order</a>
+        <a class="btn btn-secondary" href="https://t.me/SannzyBot" target="_blank" rel="noopener noreferrer" data-link="telegram">✈ Telegram Bot</a>
+        <a class="btn btn-ghost" href="https://wa.me/628889868505" target="_blank" rel="noopener noreferrer">◯ Chat Admin</a>
+        <a class="btn btn-group" href="https://chat.whatsapp.com/GTVNI2EbMwV9gb2r5aKDPe" target="_blank" rel="noopener noreferrer" data-link="whatsapp-group">◯ Join Grup WA</a>
+      </div>
+
+      <div class="status"><span class="dot"></span>Order otomatis tersedia · cek stok langsung</div>
+    </div>
+
+    <div class="hero-art">
+      <div class="glow"></div>
+      <div class="hero-logo sannzy-right-logo">
+    SANNZY<span>STORE</span>
+</div>
+      <div class="hero-domain">PREMIUM DIGITAL STORE</div>
+      <div class="hero-stat"><strong>PREMIUM+</strong><span>Apps & digital<br>needs</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat-card"><strong>PREMIUM APPS</strong><span>Berbagai aplikasi pilihan</span></div>
+    <div class="stat-card"><strong>AUTO ORDER</strong><span>Order lebih praktis</span></div>
+    <div class="stat-card"><strong>GARANSI</strong><span>Sesuai ketentuan produk</span></div>
+    <div class="stat-card"><strong>FAST RESPON</strong><span>Admin siap membantu</span></div>
+  </div>
+</section>
+
+<section id="layanan" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label">01 — OUR SERVICES</div>
+        <h2>Satu toko untuk berbagai kebutuhan digital.</h2>
+      </div>
+      <p>Pilih produk sesuai kebutuhanmu atau langsung gunakan Auto Order untuk melihat katalog dan stok yang tersedia.</p>
+    </div>
+
+    <div class="service-grid">
+      <article class="panel service">
+        <div class="icon">◈</div>
+        <h3>Streaming & Entertainment</h3>
+        <p>Layanan hiburan premium untuk streaming film, series, musik, dan konten favorit.</p>
+        <div class="chips">
+          <span>Netflix</span><span>Spotify Premium</span><span>Viu</span><span>iQIYI VIP</span>
+          <span>Loklok VIP</span><span>Disney+ Hotstar</span><span>Vidio</span><span>Apple Music</span><span>Prime Video</span>
+        </div>
+      </article>
+
+      <article class="panel service">
+        <div class="icon">✦</div>
+        <h3>Design & Editing</h3>
+        <p>Tools premium untuk membuat desain dan konten lebih mudah.</p>
+        <div class="chips">
+          <span>Canva Premium</span><span>Canva Edu</span><span>CapCut Pro</span>
+          <span>Alight Motion</span><span>Meitu VIP</span>
+        </div>
+      </article>
+
+      <article class="panel service">
+        <div class="icon">AI</div>
+        <h3>AI & Productivity</h3>
+        <p>Tools AI dan aplikasi produktivitas untuk belajar, kerja, dan kebutuhan sehari-hari.</p>
+        <div class="chips">
+          <span>ChatGPT Plus</span><span>Gemini Pro</span><span>Leonardo AI</span>
+          <span>Microsoft License</span><span>Scribd</span><span>Zoom Pro</span>
+        </div>
+      </article>
+
+      <article class="panel service">
+        <div class="icon">+</div>
+        <h3>Digital Needs Lainnya</h3>
+        <p>Lengkapi kebutuhan digitalmu dengan berbagai layanan tambahan.</p>
+        <div class="chips">
+          <span>Social Media</span><span>Game Top Up</span><span>E-Money</span>
+          <span>Pulsa</span><span>Voucher</span><span>VPN</span><span>Duolingo</span>
+        </div>
+      </article>
+    </div>
+          <article class="panel service">
+        <div class="icon">↗</div>
+        <h3>Social Media Boost</h3>
+        <p>
+          Berbagai layanan peningkatan engagement untuk kebutuhan akun
+          media sosial dan konten digital.
+        </p>
+        <div class="chips">
+          <span>Instagram Likes</span>
+          <span>Instagram Followers</span>
+          <span>Instagram Views</span>
+          <span>TikTok Likes</span>
+          <span>TikTok Followers</span>
+          <span>TikTok Views</span>
+        </div>
+      </article>
+  </div>
+</section>
+
+<section id="aplikasi" class="section product-section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label">02 — POPULAR PRODUCTS</div>
+        <h2>Produk yang sering dicari.</h2>
+      </div>
+      <p>Contoh produk unggulan. Klik Auto Order untuk melihat daftar dan stok terbaru.</p>
+    </div>
+
+    <div class="product-grid">
+      <article class="product">
+        <div class="product-art net">N</div>
+        <h3>Netflix</h3><p>Streaming & entertainment</p>
+        <a href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">Lihat di Auto Order ↗</a>
+      </article>
+      <article class="product">
+        <div class="product-art spot">♫</div>
+        <h3>Spotify Premium</h3><p>Music & entertainment</p>
+        <a href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">Lihat di Auto Order ↗</a>
+      </article>
+      <article class="product">
+        <div class="product-art can">C</div>
+        <h3>Canva Premium</h3><p>Design & creative</p>
+        <a href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">Lihat di Auto Order ↗</a>
+      </article>
+      <article class="product">
+        <div class="product-art cap">✂</div>
+        <h3>CapCut Pro</h3><p>Video editing</p>
+        <a href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">Lihat di Auto Order ↗</a>
+      </article>
+      <article class="product">
+        <div class="product-art chatgpt">GPT</div>
+        <h3>ChatGPT Plus</h3><p>AI & productivity</p>
+        <a href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">Lihat di Auto Order ↗</a>
+      </article>
+      <article class="product">
+        <div class="product-art gem">✧</div>
+        <h3>Gemini Pro</h3><p>AI & productivity</p>
+        <a href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">Lihat di Auto Order ↗</a>
+      </article>
+    
+            <!-- SOCIAL MEDIA LIKES -->
+      <article class="product social-product"
+               data-social-category="likes"
+               tabindex="0"
+               aria-label="Buka harga Social Media Likes">
+        <div class="product-art social-like">♥</div>
+        <h3>Social Media Likes</h3>
+        <p>Paket likes untuk berbagai platform</p>
+        <button type="button" class="social-price-button">
+          Lihat Paket & Harga ↗
+        </button>
+      </article>
+
+      <!-- SOCIAL MEDIA FOLLOWERS -->
+      <article class="product social-product"
+               data-social-category="followers"
+               tabindex="0"
+               aria-label="Buka harga Social Media Followers">
+        <div class="product-art social-followers">＋</div>
+        <h3>Social Media Followers</h3>
+        <p>Paket followers dan subscriber</p>
+        <button type="button" class="social-price-button">
+          Lihat Paket & Harga ↗
+        </button>
+      </article>
+
+      <!-- SOCIAL MEDIA VIEWS -->
+      <article class="product social-product"
+               data-social-category="views"
+               tabindex="0"
+               aria-label="Buka harga Social Media Views">
+        <div class="product-art social-views">◉</div>
+        <h3>Social Media Views</h3>
+        <p>Paket views dan plays untuk konten</p>
+        <button type="button" class="social-price-button">
+          Lihat Paket & Harga ↗
+        </button>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA PRICE MODAL -->
+<div class="social-price-modal"
+     id="socialPriceModal"
+     aria-hidden="true">
+
+  <div class="social-price-backdrop"
+       data-social-close></div>
+
+  <section class="social-price-dialog"
+           role="dialog"
+           aria-modal="true"
+           aria-labelledby="socialPriceTitle">
+
+    <div class="social-price-header">
+      <div>
+        <h2 id="socialPriceTitle">Paket Social Media</h2>
+        <p>Pilih layanan, cek harga, lalu pesan melalui WhatsApp.</p>
+      </div>
+
+      <button type="button"
+              class="social-price-close"
+              id="socialPriceClose"
+              aria-label="Tutup popup">×</button>
+    </div>
+
+    <div class="social-price-tabs" role="tablist">
+      <button type="button"
+              class="social-price-tab"
+              data-social-tab="views">Views</button>
+
+      <button type="button"
+              class="social-price-tab"
+              data-social-tab="likes">Likes</button>
+
+      <button type="button"
+              class="social-price-tab"
+              data-social-tab="followers">Followers</button>
+    </div>
+
+    <div class="social-price-list"
+         id="socialPriceList"
+         aria-live="polite"></div>
+
+    <div class="social-price-terms">
+      <strong>Ketentuan pemesanan</strong>
+      <ul>
+        <li>Harga berlaku kelipatan.</li>
+        <li>Selama proses, jangan utak-atik akun. Jika melanggar ketentuan, pesanan hangus tanpa refund.</li>
+        <li>ALL TRX NO REFF.</li>
+        <li>Membeli = paham.</li>
+      </ul>
+    </div>
+
+  </section>
+</div>
+
+<!-- CARA ORDER & KLAIM GARANSI -->
+<section id="cara-order" class="section order-warranty-section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label order-section-kicker">CARA ORDER &amp; GARANSI</div>
+        <h2 class="order-section-title">Mau order otomatis atau dibantu admin?</h2>
+      </div>
+      <p class="order-section-description">
+        Pilih cara pemesanan yang paling nyaman. Kalau ada kendala pada produk yang memiliki garansi,
+        kamu juga bisa menghubungi admin melalui WhatsApp atau Instagram.
+      </p>
+    </div>
+
+    <div class="order-method-grid">
+      <!-- ORDER OTOMATIS -->
+      <article class="panel order-method-card">
+        <div class="order-card-top">
+          <div class="order-icon" aria-hidden="true">⚡</div>
+          <div class="order-card-kicker">01 — AUTO ORDER</div>
+        </div>
+        <h3 class="order-card-title">Order Otomatis</h3>
+        <p class="order-card-copy">
+          Cocok untuk kamu yang ingin melihat katalog dan melakukan pemesanan mandiri tanpa perlu menunggu balasan admin.
+        </p>
+        <ol class="order-steps">
+          <li>Buka website Auto Order atau SannzyBot melalui Telegram.</li>
+          <li>Pilih produk dan paket, lalu periksa detail serta ketentuan yang tersedia.</li>
+          <li>Ikuti instruksi checkout dan pembayaran yang ditampilkan, lalu cek status pesanan.</li>
+        </ol>
+        <div class="order-card-actions">
+          <a class="btn btn-primary" href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">⚡ Buka Auto Order ↗</a>
+          <a class="btn btn-secondary" href="https://t.me/SannzyBot" target="_blank" rel="noopener noreferrer" data-link="telegram">✈ Telegram Bot ↗</a>
+        </div>
+      </article>
+
+      <!-- ORDER MANUAL -->
+      <article class="panel order-method-card">
+        <div class="order-card-top">
+          <div class="order-icon" aria-hidden="true">💬</div>
+          <div class="order-card-kicker">02 — ADMIN ASSISTED</div>
+        </div>
+        <h3 class="order-card-title">Order Manual</h3>
+        <p class="order-card-copy">
+          Pilih cara ini jika ingin bertanya dulu, meminta rekomendasi, atau dibantu admin sebelum melakukan pemesanan.
+        </p>
+        <ol class="order-steps">
+          <li>Chat admin melalui WhatsApp atau DM Instagram resmi Sannzy Store.</li>
+          <li>Sebutkan nama produk, paket atau durasi yang diinginkan, serta kebutuhanmu.</li>
+          <li>Tunggu konfirmasi stok dan instruksi admin sebelum melakukan pembayaran.</li>
+        </ol>
+        <div class="order-card-actions">
+          <a class="btn btn-primary" href="https://wa.me/628889868505?text=Halo%20Admin%20Sannzy%20Store%2C%20saya%20ingin%20order%20manual.%20Produk%3A%20...%20Paket%3A%20..." target="_blank" rel="noopener noreferrer">◯ Order via WhatsApp ↗</a>
+          <a class="btn btn-secondary" href="https://www.instagram.com/sannzystore_/" target="_blank" rel="noopener noreferrer" data-link="instagram">◎ Chat Instagram ↗</a>
+        </div>
+      </article>
+
+      <!-- KLAIM GARANSI -->
+      <article class="panel order-method-card">
+        <div class="order-card-top">
+          <div class="order-icon" aria-hidden="true">🛡</div>
+          <div class="order-card-kicker">03 — WARRANTY SUPPORT</div>
+        </div>
+        <h3 class="order-card-title">Cara Klaim Garansi</h3>
+        <p class="order-card-copy">
+          Jika produkmu mencakup garansi dan mengalami kendala dalam masa garansi, hubungi admin agar pesanan dapat diperiksa.
+        </p>
+        <ol class="order-steps">
+          <li>Siapkan ID atau bukti pesanan, nama produk, dan screenshot kendala yang dialami.</li>
+          <li>Hubungi admin melalui WhatsApp atau DM Instagram resmi Sannzy Store.</li>
+          <li>Jelaskan kendala dan tunggu verifikasi serta arahan admin sesuai ketentuan garansi produk.</li>
+        </ol>
+        <div class="order-card-actions">
+          <a class="btn btn-primary" href="https://wa.me/628889868505?text=Halo%20Admin%20Sannzy%20Store%2C%20saya%20ingin%20mengajukan%20klaim%20garansi.%20Produk%3A%20...%20ID%20pesanan%3A%20...%20Kendala%3A%20..." target="_blank" rel="noopener noreferrer">◯ Klaim via WhatsApp ↗</a>
+          <a class="btn btn-secondary" href="https://www.instagram.com/sannzystore_/" target="_blank" rel="noopener noreferrer" data-link="instagram">◎ Klaim via Instagram ↗</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="order-warranty-note">
+      <strong>Catatan garansi:</strong>
+      <span class="order-warranty-note-copy"> Garansi mengikuti jenis produk, masa garansi, dan ketentuan yang berlaku saat pembelian. Sertakan informasi yang relevan agar admin bisa membantu pengecekan. Jangan mengirimkan password, kode OTP, atau data keamanan akun.</span>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI CUSTOMER -->
+<section id="testimoni" class="section testimonial-section">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="label">03 — CUSTOMER TESTIMONIALS</div>
+        <h2>Dipercaya customer, dibuktikan lewat testimoni.</h2>
+      </div>
+
+      <p>
+        Lihat bukti transaksi dan pengalaman customer Sannzy Store.
+        Terima kasih sudah menjadi bagian dari kami.
+      </p>
+    </div>
+
+    <div class="testimonial-grid" id="testimonialGrid"></div>
+
+    <div class="center-button">
+      <a class="btn btn-primary"
+         href="https://www.instagram.com/sannzystore_/"
+         target="_blank" rel="noopener noreferrer">
+        Lihat Instagram Sannzy Store ↗
+      </a>
+    </div>
+
+  </div>
+</section>
+<section id="keunggulan" class="section">
+  <div class="container why-grid">
+    <div class="panel why">
+      <div class="label">03 — WHY SANNZY STORE</div>
+      <h2>Belanja digital tanpa ribet.</h2>
+      <p>Temukan produk premium dengan jalur order yang mudah dan pilihan kategori yang lengkap.</p>
+
+      <div class="features">
+        <div class="feature"><div class="feature-num">01</div><div><b>Auto Order</b><small>Pesan langsung lewat website otomatis.</small></div></div>
+        <div class="feature"><div class="feature-num">02</div><div><b>Telegram Bot</b><small>Alternatif order praktis melalui Telegram.</small></div></div>
+        <div class="feature"><div class="feature-num">03</div><div><b>Admin Support</b><small>Hubungi admin saat membutuhkan bantuan.</small></div></div>
+        <div class="feature"><div class="feature-num">04</div><div><b>Banyak Kategori</b><small>Dari streaming hingga AI, editing dan social media.</small></div></div>
+      </div>
+    </div>
+
+    <div class="panel quick">
+      <div class="label">QUICK ORDER</div>
+      <h3>Pilih cara order kamu.</h3>
+
+      <a class="quick-link" href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">
+        <span class="qicon">⚡</span><span><b>Website Auto Order</b><small>Rekomendasi untuk order mandiri</small></span><i>↗</i>
+      </a>
+      <a class="quick-link" href="https://t.me/SannzyBot" target="_blank" rel="noopener noreferrer" data-link="telegram">
+        <span class="qicon">✈</span><span><b>SannzyBot</b><small>Order lewat Telegram</small></span><i>↗</i>
+      </a>
+      <a class="quick-link" href="https://wa.me/628889868505" target="_blank" rel="noopener noreferrer">
+        <span class="qicon">◯</span><span><b>WhatsApp Admin</b><small>Butuh bantuan langsung?</small></span><i>↗</i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="section trust-section" id="percaya">
+  <div class="container trust-wrap">
+    <div class="label">04 — WHY TRUST US</div>
+    <h2 class="trust-title">KENAPA PERCAYA SANNZY STORE</h2>
+    <p class="trust-copy">
+      Kami hadir untuk membantu kebutuhan aplikasi premium dan produk digital dengan proses order
+      yang mudah, pilihan produk yang beragam, serta dukungan admin saat kamu membutuhkan bantuan.
+      Kami tidak sekadar menyediakan produk — kami ingin setiap transaksi terasa jelas dan nyaman.
+    </p>
+
+    <div class="trust-points">
+      <div class="trust-point">
+        <span class="diamond">◆</span>
+        <span><b>Beragam produk premium</b> untuk streaming, design, editing, AI, productivity, dan kebutuhan digital lainnya.</span>
+      </div>
+      <div class="trust-point">
+        <span class="diamond">◆</span>
+        <span><b>Order 24/7 melalui Auto Order</b> sehingga kamu bisa mengecek produk dan melakukan pemesanan kapan saja.</span>
+      </div>
+      <div class="trust-point">
+        <span class="diamond">◆</span>
+        <span><b>Ada bantuan admin</b> melalui WhatsApp saat kamu membutuhkan penjelasan atau bantuan terkait pesanan.</span>
+      </div>
+      <div class="trust-point">
+        <span class="diamond">◆</span>
+        <span><b>Ketentuan produk lebih jelas</b> — detail paket, tipe akses, dan garansi mengikuti produk yang kamu pilih.</span>
+      </div>
+      <div class="trust-point">
+        <span class="diamond">◆</span>
+        <span><b>Komunitas & update</b> melalui kanal Sannzy Store untuk mendapatkan informasi produk dan promo terbaru.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="container">
+    <div class="panel contact-panel">
+      <div class="contact-grid">
+        <div>
+          <div class="label">05 — STAY CONNECTED</div>
+          <h2>Hubungi dan temukan Sannzy Store.</h2>
+          <p>Ikuti kanal resmi untuk update produk, stok, promo, dan informasi terbaru.</p>
+          <a class="btn btn-primary" href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">⚡ Order Sekarang</a>
+        </div>
+
+        <div class="contact-list">
+          <a class="contact-card" href="https://www.instagram.com/sannzystore_/" target="_blank" rel="noopener noreferrer" data-link="instagram">
+            <span class="cicon">◎</span><span><b>Instagram</b><small>@sannzystore_</small></span><i>↗</i>
+          </a>
+          <a class="contact-card" href="https://t.me/SannzyBot" target="_blank" rel="noopener noreferrer" data-link="telegram">
+            <span class="cicon">✈</span><span><b>Telegram Bot</b><small>SannzyBot</small></span><i>↗</i>
+          </a>
+          <a class="contact-card" href="https://chat.whatsapp.com/GTVNI2EbMwV9gb2r5aKDPe" target="_blank" rel="noopener noreferrer" data-link="whatsapp-group">
+            <span class="cicon">◯</span><span><b>Grup WhatsApp</b><small>Join grup Sannzy Store</small></span><i>↗</i>
+          </a>
+          <a class="contact-card wa" href="https://wa.me/628889868505" target="_blank" rel="noopener noreferrer">
+            <span class="cicon">◯</span><span><b>WhatsApp</b><small>Chat Admin</small></span><i>↗</i>
+          </a>
+          <a class="contact-card auto" href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">
+            <span class="cicon">⚡</span><span><b>Website Auto Order</b><small>web.xoftware.id/sannzy</small></span><i>↗</i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container faq-grid">
+    <div>
+      <div class="label qna-kicker">GOOD TO KNOW</div>
+      <h2>Q&amp;A sebelum order.</h2>
+      <p class="qna-subtitle">
+        Masih bingung memilih produk atau tipe akun? Berikut penjelasan singkat yang bisa membantu
+        sebelum kamu melakukan pembelian.
+      </p>
+    </div>
+
+    <div>
+      <details open>
+        <summary>Kenapa harus order di Sannzy Store?</summary>
+        <div class="answer-box">
+          Sannzy Store fokus menyediakan kebutuhan digital dalam satu tempat dengan pilihan
+          <b>Auto Order, Telegram Bot, dan bantuan admin</b>. Kamu bisa memilih cara order yang
+          paling nyaman tanpa harus menunggu balasan admin hanya untuk melihat katalog.
+          <div class="notice">Tips: selalu periksa detail produk, tipe akses, masa aktif, dan ketentuan garansi sebelum checkout.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Apa perbedaan Sharing dan Private?</summary>
+        <div class="answer-box">
+          <b>Sharing</b> berarti akses digunakan bersama sesuai ketentuan paket. Biasanya lebih cocok
+          untuk kebutuhan yang tidak membutuhkan akun khusus pribadi.
+          <br><br>
+          <b>Private</b> berarti akses diberikan untuk penggunaan yang lebih personal / khusus sesuai
+          paket. Biasanya memberikan kontrol penggunaan yang lebih nyaman, tetapi harga dapat berbeda.
+          <ul class="answer-points">
+            <li><b>Sharing:</b> lebih ekonomis, akses berbagi, aturan penggunaan lebih ketat.</li>
+            <li><b>Private:</b> lebih personal, akses khusus sesuai paket, biasanya lebih fleksibel.</li>
+          </ul>
+          <div class="notice">Ketersediaan, fitur, perangkat, masa aktif, dan garansi dapat berbeda pada setiap produk. Ikuti detail yang tertulis pada halaman produk.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Order lewat website atau Telegram Bot?</summary>
+        <div class="answer-box">
+          Keduanya bisa digunakan. <b>Auto Order</b> cocok untuk melihat katalog dan melakukan
+          pemesanan mandiri, sedangkan <b>SannzyBot</b> menjadi alternatif praktis melalui Telegram.
+        </div>
+      </details>
+
+      <details>
+        <summary>Kalau saya bingung memilih produk?</summary>
+        <div class="answer-box">
+          Hubungi admin melalui WhatsApp. Sertakan nama aplikasi, kebutuhan kamu, dan tipe akses
+          yang diinginkan supaya admin dapat membantu menjelaskan pilihan yang tersedia.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-top">
+    <div>
+      <a href="#home" class="logo">SANNZY<span>STORE</span></a>
+      <p class="muted">Premium apps & digital needs.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#layanan">Layanan</a>
+      <a href="#aplikasi">Aplikasi</a>
+      <a href="#percaya">Kenapa Sannzy?</a>
+      <a href="#contact">Kontak</a>
+      <a href="https://web.xoftware.id/sannzy" target="_blank" rel="noopener noreferrer" data-link="auto-order">Auto Order</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Sannzy Store</span>
+    <span>Premium digital, lebih praktis.</span>
+  </div>
+</footer>
+
+<button id="backTop" class="backtop" style="display:none;position:fixed;right:22px;bottom:150px;width:45px;height:45px;border-radius:50%;border:1px solid #3b2949;background:#17101f;color:#fff;z-index:90;cursor:pointer">↑</button>
+
+<div class="music-player">
+  <div class="music-row">
+    <div class="music-icon">♫</div>
+    <div class="music-info">
+      <b>SANNZY STORE MUSIC</b>
+      <small id="musicStatus">Klik ▶ untuk memutar</small>
+    </div>
+    <button id="musicBtn" class="music-btn">▶</button>
+  </div>
+  <div class="music-bar"><span id="musicProgress"></span></div>
+</div>
+
+<audio id="music" loop preload="auto">
+    <source src="assets/audio/Backsound.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const mobileMenu=document.getElementById("mobileMenu");
+const music=document.getElementById("music");
+const musicBtn=document.getElementById("musicBtn");
+const musicStatus=document.getElementById("musicStatus");
+const musicProgress=document.getElementById("musicProgress");
+const backTop=document.getElementById("backTop");
+
+menuBtn.addEventListener("click",()=>{
+  mobileMenu.classList.toggle("open");
+});
+
+document.querySelectorAll(".mobile-menu a").forEach(a=>{
+  a.addEventListener("click",()=>mobileMenu.classList.remove("open"));
+});
+
+function musicUI(){
+  const playing=!music.paused;
+  musicBtn.textContent=playing?"Ⅱ":"▶";
+  musicStatus.textContent=playing?"SANNZY STORE MUSIC · Playing":"Klik ▶ untuk memutar";
+}
+
+async function playMusic(){
+
+    try{
+
+        music.muted = false;
+
+        await music.play();
+
+        musicUI();
+
+    }catch(error){
+
+        musicStatus.textContent =
+            "Klik ▶ untuk memutar";
+
+        console.log(
+            "Audio belum bisa diputar:",
+            error
+        );
+
+    }
+
+}
+
+musicBtn.addEventListener("click",async ()=>{
+  if(music.paused) await playMusic();
+  else {music.pause();musicUI();}
+});
+
+/* Coba autoplay. Browser dapat memblokir autoplay bersuara.
+   Klik pertama pengguna akan mencoba menyalakan suara. */
+
+  musicUI();
+
+document.addEventListener("click",()=>{
+  if(music.paused) playMusic();
+  else if(music.muted){music.muted=false;musicUI();}
+},{once:true});
+
+music.addEventListener("timeupdate",()=>{
+  if(music.duration){
+    musicProgress.style.width=(music.currentTime/music.duration*100)+"%";
+  }
+});
+
+window.addEventListener("scroll",()=>{
+  backTop.style.display=window.scrollY>500?"block":"none";
+});
+backTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+musicUI();
+</script>
+<script>
+const SANNZY_LINKS = {
+  autoOrder: "https://web.xoftware.id/sannzy",
+  telegram: "https://t.me/SannzyBot",
+  whatsappGroup: "https://chat.whatsapp.com/GTVNI2EbMwV9gb2r5aKDPe",
+  instagram: "https://www.instagram.com/sannzystore_/"
+};
+
+// Keep every matching button/card synchronized automatically.
+document.querySelectorAll('[data-link="auto-order"]').forEach(el => el.href = SANNZY_LINKS.autoOrder);
+document.querySelectorAll('[data-link="telegram"]').forEach(el => el.href = SANNZY_LINKS.telegram);
+document.querySelectorAll('[data-link="whatsapp-group"]').forEach(el => el.href = SANNZY_LINKS.whatsappGroup);
+document.querySelectorAll('[data-link="instagram"]').forEach(el => el.href = SANNZY_LINKS.instagram);
+</script>
+
+<script>
+(function () {
+
+    "use strict";
+
+    const button = document.getElementById("languageSwitch");
+    const currentLabel = document.getElementById("languageCurrent");
+    const otherLabel = document.getElementById("languageOther");
+
+    const mobileButton = document.getElementById("mobileLanguageSwitch");
+    const mobileLabel = document.getElementById("mobileLanguageCurrent");
+
+
+    if (!button) {
+        console.error("Tombol #languageSwitch tidak ditemukan.");
+        return;
+    }
+
+
+    /* =====================================================
+       DAFTAR TERJEMAHAN
+       ===================================================== */
+
+    const translations = {
+
+        /* =========================
+           NAVBAR
+           ========================= */
+
+        '.nav-links a[href="#layanan"]': [
+            "Layanan",
+            "Services"
+        ],
+
+        '.nav-links a[href="#aplikasi"]': [
+            "Aplikasi",
+            "Apps"
+        ],
+
+        '.nav-links a[href="#keunggulan"]': [
+            "Kenapa Sannzy?",
+            "Why Sannzy?"
+        ],
+
+        '.nav-links a[href="#contact"]': [
+            "Hubungi Kami",
+            "Contact Us"
+        ],
+
+        '.nav-group': [
+            "JOIN GRUP WA",
+            "JOIN WHATSAPP GROUP"
+        ],
+
+        '.nav-auto': [
+            "AUTO ORDER ↗",
+            "AUTO ORDER ↗"
+        ],
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        '#mobileMenu a[href="#layanan"]': [
+            "Layanan",
+            "Services"
+        ],
+
+        '#mobileMenu a[href="#aplikasi"]': [
+            "Aplikasi",
+            "Apps"
+        ],
+
+        '#mobileMenu a[href="#keunggulan"]': [
+            "Kenapa Sannzy?",
+            "Why Sannzy?"
+        ],
+
+        '#mobileMenu a[href="#contact"]': [
+            "Hubungi Kami",
+            "Contact Us"
+        ],
+
+        '#mobileMenu a[data-link="whatsapp-group"]': [
+            "◯ JOIN GRUP WA",
+            "◯ JOIN WHATSAPP GROUP"
+        ],
+
+        '#mobileMenu a[data-link="auto-order"]': [
+            "⚡ AUTO ORDER",
+            "⚡ AUTO ORDER"
+        ],
+
+
+        /* =========================
+           HERO
+           ========================= */
+
+        ".hero h2": [
+            "Premium apps & kebutuhan digital, <span>lebih mudah</span> dan praktis.",
+            "Premium apps & digital needs, <span>easier</span> and more practical."
+        ],
+
+        ".hero p": [
+            "Temukan berbagai aplikasi premium untuk streaming, design, AI, produktivitas, editing, hingga kebutuhan social media dalam satu tempat.",
+            "Find various premium apps for streaming, design, AI, productivity, editing, and social media needs in one place."
+        ],
+
+        ".actions .btn-primary": [
+            "⚡ Auto Order",
+            "⚡ Auto Order"
+        ],
+
+        ".actions .btn-secondary": [
+            "✈ Telegram Bot",
+            "✈ Telegram Bot"
+        ],
+
+        ".actions .btn-ghost": [
+            "◯ Chat Admin",
+            "◯ Chat Admin"
+        ],
+
+        ".actions .btn-group": [
+            "◯ Join Grup WA",
+            "◯ Join WhatsApp Group"
+        ],
+
+        ".status": [
+            "Order otomatis tersedia · cek stok langsung",
+            "Automatic ordering available · check stock instantly"
+        ],
+
+        ".hero-domain": [
+            "PREMIUM DIGITAL STORE",
+            "PREMIUM DIGITAL STORE"
+        ],
+
+
+        /* =========================
+           STATS
+           ========================= */
+
+        ".stat-card:nth-child(1) span": [
+            "Berbagai aplikasi pilihan",
+            "Various premium apps"
+        ],
+
+        ".stat-card:nth-child(2) span": [
+            "Order lebih praktis",
+            "Easy ordering"
+        ],
+
+        ".stat-card:nth-child(3) span": [
+            "Sesuai ketentuan produk",
+            "According to product terms"
+        ],
+
+        ".stat-card:nth-child(4) span": [
+            "Admin siap membantu",
+            "Admin support available"
+        ],
+
+
+        /* =========================
+           SERVICES
+           ========================= */
+
+        "#layanan .section-head h2": [
+            "Satu toko untuk berbagai kebutuhan digital.",
+            "One store for all your digital needs."
+        ],
+
+        "#layanan .section-head p": [
+            "Pilih produk sesuai kebutuhanmu atau langsung gunakan Auto Order untuk melihat katalog dan stok yang tersedia.",
+            "Choose the product you need or use Auto Order to view the available catalog and stock."
+        ],
+
+        ".service:nth-child(1) p": [
+            "Layanan hiburan premium untuk streaming film, series, musik, dan konten favorit.",
+            "Premium entertainment services for movies, series, music, and your favorite content."
+        ],
+
+        ".service:nth-child(2) p": [
+            "Tools premium untuk membuat desain dan konten lebih mudah.",
+            "Premium tools for easier design and content creation."
+        ],
+
+        ".service:nth-child(3) p": [
+            "Tools AI dan aplikasi produktivitas untuk belajar, kerja, dan kebutuhan sehari-hari.",
+            "AI tools and productivity apps for study, work, and everyday needs."
+        ],
+
+        ".service:nth-child(4) h3": [
+            "Digital Needs Lainnya",
+            "Other Digital Needs"
+        ],
+
+        ".service:nth-child(4) p": [
+            "Lengkapi kebutuhan digitalmu dengan berbagai layanan tambahan.",
+            "Complete your digital needs with additional services."
+        ],
+
+
+        /* =========================
+           PRODUCTS
+           ========================= */
+
+        "#aplikasi .section-head h2": [
+            "Produk yang sering dicari.",
+            "Popular products."
+        ],
+
+        "#aplikasi .section-head p": [
+            "Contoh produk unggulan. Klik Auto Order untuk melihat daftar dan stok terbaru.",
+            "Featured products. Click Auto Order to view the latest catalog and stock."
+        ],
+
+        ".product a": [
+            "Lihat di Auto Order ↗",
+            "View in Auto Order ↗"
+        ],
+
+               "#testimoni .center-button .btn": [
+            "Lihat Instagram Sannzy Store ↗",
+            "Visit Sannzy Store on Instagram ↗"
+        ],
+
+
+        /* =========================
+           WHY SANNZY
+           ========================= */
+
+        "#keunggulan h2": [
+            "Belanja digital tanpa ribet.",
+            "Digital shopping without the hassle."
+        ],
+
+        "#keunggulan .why > p": [
+            "Temukan produk premium dengan jalur order yang mudah dan pilihan kategori yang lengkap.",
+            "Find premium products with easy ordering options and a wide range of categories."
+        ],
+
+        ".feature:nth-child(1) small": [
+            "Pesan langsung lewat website otomatis.",
+            "Order directly through the automated website."
+        ],
+
+        ".feature:nth-child(2) small": [
+            "Alternatif order praktis melalui Telegram.",
+            "A convenient alternative through Telegram."
+        ],
+
+        ".feature:nth-child(3) small": [
+            "Hubungi admin saat membutuhkan bantuan.",
+            "Contact the admin whenever you need help."
+        ],
+
+        ".feature:nth-child(4) b": [
+            "Banyak Kategori",
+            "Many Categories"
+        ],
+
+        ".feature:nth-child(4) small": [
+            "Dari streaming hingga AI, editing dan social media.",
+            "From streaming to AI, editing, and social media."
+        ],
+
+
+        /* =========================
+           QUICK ORDER
+           ========================= */
+
+        ".quick h3": [
+            "Pilih cara order kamu.",
+            "Choose your preferred way to order."
+        ],
+
+        ".quick-link:nth-child(1) small": [
+            "Rekomendasi untuk order mandiri",
+            "Recommended for self-service ordering"
+        ],
+
+        ".quick-link:nth-child(2) small": [
+            "Order lewat Telegram",
+            "Order through Telegram"
+        ],
+
+        ".quick-link:nth-child(3) small": [
+            "Butuh bantuan langsung?",
+            "Need direct assistance?"
+        ],
+
+
+        /* =========================
+           TRUST
+           ========================= */
+
+        "#percaya .trust-title": [
+            "KENAPA PERCAYA SANNZY STORE",
+            "WHY TRUST SANNZY STORE"
+        ],
+
+        "#percaya .trust-copy": [
+            "Kami hadir untuk membantu kebutuhan aplikasi premium dan produk digital dengan proses order yang mudah, pilihan produk yang beragam, serta dukungan admin saat kamu membutuhkan bantuan. Kami tidak sekadar menyediakan produk — kami ingin setiap transaksi terasa jelas dan nyaman.",
+            "We provide premium apps and digital products through an easy ordering process, a wide range of products, and admin support whenever you need help. We do more than provide products — we want every transaction to be clear and convenient."
+        ],
+
+        ".trust-point:nth-child(1) span:last-child": [
+            "<b>Beragam produk premium</b> untuk streaming, design, editing, AI, productivity, dan kebutuhan digital lainnya.",
+            "<b>A wide range of premium products</b> for streaming, design, editing, AI, productivity, and other digital needs."
+        ],
+
+        ".trust-point:nth-child(2) span:last-child": [
+            "<b>Order 24/7 melalui Auto Order</b> sehingga kamu bisa mengecek produk dan melakukan pemesanan kapan saja.",
+            "<b>24/7 ordering through Auto Order</b> so you can check products and place orders anytime."
+        ],
+
+        ".trust-point:nth-child(3) span:last-child": [
+            "<b>Ada bantuan admin</b> melalui WhatsApp saat kamu membutuhkan penjelasan atau bantuan terkait pesanan.",
+            "<b>Admin support is available</b> through WhatsApp whenever you need explanations or help with your order."
+        ],
+
+        ".trust-point:nth-child(4) span:last-child": [
+            "<b>Ketentuan produk lebih jelas</b> — detail paket, tipe akses, dan garansi mengikuti produk yang kamu pilih.",
+            "<b>Clearer product terms</b> — package details, access type, and warranty depend on the product you choose."
+        ],
+
+        ".trust-point:nth-child(5) span:last-child": [
+            "<b>Komunitas & update</b> melalui kanal Sannzy Store untuk mendapatkan informasi produk dan promo terbaru.",
+            "<b>Community & updates</b> through Sannzy Store channels for the latest product information and promotions."
+        ],
+
+
+        /* =========================
+           CONTACT
+           ========================= */
+
+        "#contact h2": [
+            "Hubungi dan temukan Sannzy Store.",
+            "Connect with Sannzy Store."
+        ],
+
+        "#contact p": [
+            "Ikuti kanal resmi untuk update produk, stok, promo, dan informasi terbaru.",
+            "Follow our official channels for product updates, stock information, promotions, and the latest news."
+        ],
+
+        '#contact .contact-card:nth-child(3) b': [
+            "Grup WhatsApp",
+            "WhatsApp Group"
+        ],
+
+        '#contact .contact-card:nth-child(3) small': [
+            "Join grup Sannzy Store",
+            "Join Sannzy Store group"
+        ],
+
+
+        /* =========================
+           FAQ
+           ========================= */
+
+        ".qna-kicker": [
+            "GOOD TO KNOW",
+            "GOOD TO KNOW"
+        ],
+
+        ".faq-grid h2": [
+            "Q&A sebelum order.",
+            "Q&A before ordering."
+        ],
+
+        ".qna-subtitle": [
+            "Masih bingung memilih produk atau tipe akun? Berikut penjelasan singkat yang bisa membantu sebelum kamu melakukan pembelian.",
+            "Still unsure which product or account type to choose? Here is a short explanation to help before purchasing."
+        ],
+
+        ".faq-grid details:nth-child(1) summary": [
+            "Kenapa harus order di Sannzy Store?",
+            "Why should you order from Sannzy Store?"
+        ],
+
+        ".faq-grid details:nth-child(1) .answer-box": [
+            "Sannzy Store fokus menyediakan kebutuhan digital dalam satu tempat dengan pilihan <b>Auto Order, Telegram Bot, dan bantuan admin</b>. Kamu bisa memilih cara order yang paling nyaman tanpa harus menunggu balasan admin hanya untuk melihat katalog.<div class=\"notice\">Tips: selalu periksa detail produk, tipe akses, masa aktif, dan ketentuan garansi sebelum checkout.</div>",
+            "Sannzy Store focuses on providing digital needs in one place with <b>Auto Order, Telegram Bot, and admin support</b>. You can choose the ordering method that is most convenient for you without waiting for an admin reply just to view the catalog.<div class=\"notice\">Tip: always check the product details, access type, validity period, and warranty terms before checkout.</div>"
+        ],
+
+        ".faq-grid details:nth-child(2) summary": [
+            "Apa perbedaan Sharing dan Private?",
+            "What is the difference between Sharing and Private?"
+        ],
+
+        ".faq-grid details:nth-child(2) .answer-box": [
+            "<b>Sharing</b> berarti akses digunakan bersama sesuai ketentuan paket. Biasanya lebih cocok untuk kebutuhan yang tidak membutuhkan akun khusus pribadi.<br><br><b>Private</b> berarti akses diberikan untuk penggunaan yang lebih personal / khusus sesuai paket. Biasanya memberikan kontrol penggunaan yang lebih nyaman, tetapi harga dapat berbeda.<ul class=\"answer-points\"><li><b>Sharing:</b> lebih ekonomis, akses berbagi, aturan penggunaan lebih ketat.</li><li><b>Private:</b> lebih personal, akses khusus sesuai paket, biasanya lebih fleksibel.</li></ul><div class=\"notice\">Ketersediaan, fitur, perangkat, masa aktif, dan garansi dapat berbeda pada setiap produk. Ikuti detail yang tertulis pada halaman produk.</div>",
+            "<b>Sharing</b> means the access is shared according to the package terms. It is usually suitable for needs that do not require a personal account.<br><br><b>Private</b> means the access is provided for more personal or dedicated use according to the package. It usually offers more comfortable usage control, although the price may differ.<ul class=\"answer-points\"><li><b>Sharing:</b> more affordable, shared access, stricter usage rules.</li><li><b>Private:</b> more personal, dedicated access according to the package, usually more flexible.</li></ul><div class=\"notice\">Availability, features, devices, validity period, and warranty may differ for each product. Follow the details listed on the product page.</div>"
+        ],
+
+        ".faq-grid details:nth-child(3) summary": [
+            "Order lewat website atau Telegram Bot?",
+            "Should I order through the website or Telegram Bot?"
+        ],
+
+        ".faq-grid details:nth-child(3) .answer-box": [
+            "Keduanya bisa digunakan. <b>Auto Order</b> cocok untuk melihat katalog dan melakukan pemesanan mandiri, sedangkan <b>SannzyBot</b> menjadi alternatif praktis melalui Telegram.",
+            "Both options can be used. <b>Auto Order</b> is suitable for browsing the catalog and placing an order yourself, while <b>SannzyBot</b> is a convenient alternative through Telegram."
+        ],
+
+        ".faq-grid details:nth-child(4) summary": [
+            "Kalau saya bingung memilih produk?",
+            "What if I am unsure which product to choose?"
+        ],
+
+        ".faq-grid details:nth-child(4) .answer-box": [
+            "Hubungi admin melalui WhatsApp. Sertakan nama aplikasi, kebutuhan kamu, dan tipe akses yang diinginkan supaya admin dapat membantu menjelaskan pilihan yang tersedia.",
+            "Contact the admin through WhatsApp. Include the app name, your needs, and the preferred access type so the admin can explain the available options."
+        ],
+
+
+        /* =========================
+           ORDER & WARRANTY SECTION
+           ========================= */
+
+        '.nav-links a[href="#cara-order"]': [
+            "Cara Order",
+            "How to Order"
+        ],
+
+        '#mobileMenu a[href="#cara-order"]': [
+            "Cara Order",
+            "How to Order"
+        ],
+
+        ".order-section-kicker": [
+            "CARA ORDER & GARANSI",
+            "ORDERING & WARRANTY"
+        ],
+
+        ".order-section-title": [
+            "Mau order otomatis atau dibantu admin?",
+            "Prefer automatic ordering or admin assistance?"
+        ],
+
+        ".order-section-description": [
+            "Pilih cara pemesanan yang paling nyaman. Kalau ada kendala pada produk yang memiliki garansi, kamu juga bisa menghubungi admin melalui WhatsApp atau Instagram.",
+            "Choose the ordering method that works best for you. If a product covered by warranty has an issue, contact the admin through WhatsApp or Instagram."
+        ],
+
+        ".order-method-card:nth-child(1) .order-card-kicker": [
+            "01 — AUTO ORDER",
+            "01 — AUTO ORDER"
+        ],
+
+        ".order-method-card:nth-child(1) .order-card-title": [
+            "Order Otomatis",
+            "Automatic Order"
+        ],
+
+        ".order-method-card:nth-child(1) .order-card-copy": [
+            "Cocok untuk kamu yang ingin melihat katalog dan melakukan pemesanan mandiri tanpa perlu menunggu balasan admin.",
+            "Best for browsing the catalog and placing an order yourself without waiting for an admin reply."
+        ],
+
+        ".order-method-card:nth-child(1) .order-steps li:nth-child(1)": [
+            "Buka website Auto Order atau SannzyBot melalui Telegram.",
+            "Open the Auto Order website or SannzyBot on Telegram."
+        ],
+
+        ".order-method-card:nth-child(1) .order-steps li:nth-child(2)": [
+            "Pilih produk dan paket, lalu periksa detail serta ketentuan yang tersedia.",
+            "Choose a product and package, then review the details and available terms."
+        ],
+
+        ".order-method-card:nth-child(1) .order-steps li:nth-child(3)": [
+            "Ikuti instruksi checkout dan pembayaran yang ditampilkan, lalu cek status pesanan.",
+            "Follow the checkout and payment instructions shown, then check your order status."
+        ],
+
+        ".order-method-card:nth-child(1) .order-card-actions a:nth-child(1)": [
+            "⚡ Buka Auto Order ↗",
+            "⚡ Open Auto Order ↗"
+        ],
+
+        ".order-method-card:nth-child(1) .order-card-actions a:nth-child(2)": [
+            "✈ Telegram Bot ↗",
+            "✈ Telegram Bot ↗"
+        ],
+
+        ".order-method-card:nth-child(2) .order-card-kicker": [
+            "02 — DIBANTU ADMIN",
+            "02 — ADMIN ASSISTED"
+        ],
+
+        ".order-method-card:nth-child(2) .order-card-title": [
+            "Order Manual",
+            "Manual Order"
+        ],
+
+        ".order-method-card:nth-child(2) .order-card-copy": [
+            "Pilih cara ini jika ingin bertanya dulu, meminta rekomendasi, atau dibantu admin sebelum melakukan pemesanan.",
+            "Choose this option if you want to ask questions, get recommendations, or receive help from an admin before ordering."
+        ],
+
+        ".order-method-card:nth-child(2) .order-steps li:nth-child(1)": [
+            "Chat admin melalui WhatsApp atau DM Instagram resmi Sannzy Store.",
+            "Message the admin through Sannzy Store's official WhatsApp or Instagram DM."
+        ],
+
+        ".order-method-card:nth-child(2) .order-steps li:nth-child(2)": [
+            "Sebutkan nama produk, paket atau durasi yang diinginkan, serta kebutuhanmu.",
+            "Provide the product name, preferred package or duration, and your needs."
+        ],
+
+        ".order-method-card:nth-child(2) .order-steps li:nth-child(3)": [
+            "Tunggu konfirmasi stok dan instruksi admin sebelum melakukan pembayaran.",
+            "Wait for stock confirmation and the admin's instructions before making payment."
+        ],
+
+        ".order-method-card:nth-child(2) .order-card-actions a:nth-child(1)": [
+            "◯ Order via WhatsApp ↗",
+            "◯ Order via WhatsApp ↗"
+        ],
+
+        ".order-method-card:nth-child(2) .order-card-actions a:nth-child(2)": [
+            "◎ Chat Instagram ↗",
+            "◎ Message on Instagram ↗"
+        ],
+
+        ".order-method-card:nth-child(3) .order-card-kicker": [
+            "03 — BANTUAN GARANSI",
+            "03 — WARRANTY SUPPORT"
+        ],
+
+        ".order-method-card:nth-child(3) .order-card-title": [
+            "Cara Klaim Garansi",
+            "How to Claim Warranty"
+        ],
+
+        ".order-method-card:nth-child(3) .order-card-copy": [
+            "Jika produkmu mencakup garansi dan mengalami kendala dalam masa garansi, hubungi admin agar pesanan dapat diperiksa.",
+            "If your product includes a warranty and you experience an issue within the warranty period, contact the admin for a review."
+        ],
+
+        ".order-method-card:nth-child(3) .order-steps li:nth-child(1)": [
+            "Siapkan ID atau bukti pesanan, nama produk, dan screenshot kendala yang dialami.",
+            "Prepare your order ID or proof of purchase, product name, and a screenshot of the issue."
+        ],
+
+        ".order-method-card:nth-child(3) .order-steps li:nth-child(2)": [
+            "Hubungi admin melalui WhatsApp atau DM Instagram resmi Sannzy Store.",
+            "Contact the admin through Sannzy Store's official WhatsApp or Instagram DM."
+        ],
+
+        ".order-method-card:nth-child(3) .order-steps li:nth-child(3)": [
+            "Jelaskan kendala dan tunggu verifikasi serta arahan admin sesuai ketentuan garansi produk.",
+            "Explain the issue and wait for the admin to review it under the product's warranty terms."
+        ],
+
+        ".order-method-card:nth-child(3) .order-card-actions a:nth-child(1)": [
+            "◯ Klaim via WhatsApp ↗",
+            "◯ Claim via WhatsApp ↗"
+        ],
+
+        ".order-method-card:nth-child(3) .order-card-actions a:nth-child(2)": [
+            "◎ Klaim via Instagram ↗",
+            "◎ Claim via Instagram ↗"
+        ],
+
+        ".order-warranty-note strong": [
+            "Catatan garansi:",
+            "Warranty note:"
+        ],
+
+        ".order-warranty-note-copy": [
+            " Garansi mengikuti jenis produk, masa garansi, dan ketentuan yang berlaku saat pembelian. Sertakan informasi yang relevan agar admin bisa membantu pengecekan. Jangan mengirimkan password, kode OTP, atau data keamanan akun.",
+            " Warranty coverage depends on the product, warranty period, and terms stated at purchase. Include relevant information so the admin can review the issue. Never send passwords, OTP codes, or account security details."
+        ],
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        ".footer-links a:nth-child(1)": [
+            "Layanan",
+            "Services"
+        ],
+
+        ".footer-links a:nth-child(2)": [
+            "Aplikasi",
+            "Apps"
+        ],
+
+        ".footer-links a:nth-child(3)": [
+            "Kenapa Sannzy?",
+            "Why Sannzy?"
+        ],
+
+        ".footer-links a:nth-child(4)": [
+            "Kontak",
+            "Contact"
+        ],
+
+        ".footer-links a:nth-child(5)": [
+            "Auto Order",
+            "Auto Order"
+        ],
+
+        ".footer-bottom span:nth-child(2)": [
+            "Premium digital, lebih praktis.",
+            "Premium digital, made easier."
+        ]
+
+    };
+
+
+    /* =====================================================
+       FUNGSI GANTI BAHASA
+       ===================================================== */
+
+    function setLanguage(language) {
+
+        const english =
+            language === "en";
+
+
+        Object.entries(translations).forEach(
+            ([selector, values]) => {
+
+                document
+                    .querySelectorAll(selector)
+                    .forEach(element => {
+
+                        element.innerHTML =
+                            english
+                                ? values[1]
+                                : values[0];
+
+                    });
+
+            }
+        );
+
+
+        if (currentLabel) {
+
+    currentLabel.textContent =
+        english ? "EN" : "ID";
+
+}
+
+if (otherLabel) {
+
+    otherLabel.textContent =
+        english ? "ID" : "EN";
+
+}
+
+
+        if (mobileLabel) {
+
+            mobileLabel.textContent =
+                english ? "English" : "Indonesia";
+
+        }
+
+
+        localStorage.setItem(
+            "sannzyLanguage",
+            language
+        );
+
+    }
+
+
+    /* =====================================================
+       TOMBOL DESKTOP
+       ===================================================== */
+
+    button.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            const current =
+                localStorage.getItem(
+                    "sannzyLanguage"
+                ) || "id";
+
+
+            setLanguage(
+                current === "id"
+                    ? "en"
+                    : "id"
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       TOMBOL MOBILE
+       ===================================================== */
+
+    if (mobileButton) {
+
+        mobileButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                const current =
+                    localStorage.getItem(
+                        "sannzyLanguage"
+                    ) || "id";
+
+
+                setLanguage(
+                    current === "id"
+                        ? "en"
+                        : "id"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       BAHASA SAAT WEBSITE DIBUKA
+       ===================================================== */
+
+    setLanguage(
+        localStorage.getItem(
+            "sannzyLanguage"
+        ) || "id"
+    );
+
+
+})();
+</script>
+<script>
+/* =========================================
+   SANNZY STORE — TESTIMONIAL GALLERY
+   Memuat gambar nomor 1 sampai 25
+   ========================================= */
+
+const testimonialGrid = document.getElementById("testimonialGrid");
+
+if (testimonialGrid) {
+  for (let i = 1; i <= 25; i++) {
+    const item = document.createElement("a");
+
+    item.className = "testimonial-item";
+    item.href = `assets/images/testimoni/${i}.jpg`;
+    item.target = "_blank";
+    item.rel = "noopener noreferrer";
+    item.setAttribute(
+      "aria-label",
+      `Lihat testimoni customer nomor ${i}`
+    );
+
+    const img = document.createElement("img");
+
+    img.src = `assets/images/testimoni/${i}.jpg`;
+    img.alt = `Testimoni customer Sannzy Store nomor ${i}`;
+    img.loading = "lazy";
+
+    const caption = document.createElement("div");
+
+    caption.className = "testimonial-caption";
+    caption.textContent = `Testimoni #${i}`;
+
+    img.addEventListener("error", () => {
+      item.remove();
+    });
+
+    item.appendChild(img);
+    item.appendChild(caption);
+    testimonialGrid.appendChild(item);
+  }
+}
+</script>
+
+<script>
+/* =========================================
+   SANNZY STORE — SOCIAL MEDIA PRICES
+   ========================================= */
+
+const socialPriceData = {
+  views: [
+    {
+      platform: "TikTok",
+      name: "1.000 views — permanent",
+      price: "Rp4.000"
+    },
+    {
+      platform: "Instagram",
+      name: "100 views",
+      price: "Rp1.000"
+    },
+    {
+      platform: "Facebook",
+      name: "100 video views — non-drop",
+      price: "Rp2.000"
+    },
+    {
+      platform: "Spotify",
+      name: "100 plays — refill",
+      price: "Rp3.200"
+    },
+    {
+      platform: "Spotify",
+      name: "100 plays — non-drop",
+      price: "Rp8.200"
+    },
+    {
+      platform: "Telegram",
+      name: "100 post views",
+      price: "Rp2.250"
+    }
+  ],
+
+  likes: [
+    {
+      platform: "TikTok",
+      name: "100 likes — permanent",
+      price: "Rp6.000"
+    },
+    {
+      platform: "TikTok",
+      name: "100 likes — refill 30 hari",
+      price: "Rp2.500"
+    },
+    {
+      platform: "Instagram",
+      name: "100 likes — bule, refill 30 hari",
+      price: "Rp4.200"
+    },
+    {
+      platform: "Instagram",
+      name: "100 likes — Indonesia, refill 30 hari",
+      price: "Rp6.500"
+    },
+    {
+      platform: "YouTube",
+      name: "100 likes — refill",
+      price: "Rp6.300"
+    },
+    {
+      platform: "WhatsApp",
+      name: "10 channel reactions — permanent",
+      price: "Rp1.000"
+    }
+  ],
+
+  followers: [
+    {
+      platform: "TikTok",
+      name: "100 followers — Indonesia, refill 30 hari",
+      price: "Rp12.000"
+    },
+    {
+      platform: "TikTok",
+      name: "100 followers — refill 30 hari",
+      price: "Rp8.800",
+      note: "Wajib ada postingan."
+    },
+    {
+      platform: "TikTok",
+      name: "100 followers — no refill",
+      price: "Rp7.000"
+    },
+    {
+      platform: "Instagram",
+      name: "100 followers — mix region, refill 30 hari",
+      price: "Rp9.000"
+    },
+    {
+      platform: "Instagram",
+      name: "100 followers — Indonesia, no refill",
+      price: "Rp8.500"
+    },
+    {
+      platform: "Instagram",
+      name: "100 followers — Indonesia, refill 30 hari",
+      price: "Rp13.000"
+    },
+    {
+      platform: "Spotify",
+      name: "100 followers — 30 hari",
+      price: "Rp2.000"
+    },
+    {
+      platform: "Facebook",
+      name: "100 followers — permanent",
+      price: "Rp7.000"
+    },
+    {
+      platform: "Facebook",
+      name: "100 followers — refill 30 hari",
+      price: "Rp5.500"
+    },
+    {
+      platform: "Facebook",
+      name: "100 followers — no refill",
+      price: "Rp3.700"
+    },
+    {
+      platform: "Telegram",
+      name: "100 channel/group members — no refill (paket 1)",
+      price: "Rp1.000"
+    },
+    {
+      platform: "Telegram",
+      name: "100 channel/group members — refill 30 hari",
+      price: "Rp5.000"
+    },
+    {
+      platform: "Telegram",
+      name: "100 channel/group members — no refill (paket 2)",
+      price: "Rp4.000"
+    },
+    {
+      platform: "WhatsApp",
+      name: "100 channel subscribers — permanent",
+      price: "Rp7.500"
+    }
+  ]
+};
+
+const socialModal = document.getElementById("socialPriceModal");
+const socialPriceList = document.getElementById("socialPriceList");
+const socialPriceTitle = document.getElementById("socialPriceTitle");
+
+const socialCategoryNames = {
+  views: "Paket Views & Plays",
+  likes: "Paket Likes & Reactions",
+  followers: "Paket Followers, Members & Subscribers"
+};
+
+function renderSocialPrices(category) {
+  if (!socialPriceList || !socialPriceData[category]) return;
+
+  socialPriceTitle.textContent = socialCategoryNames[category];
+  socialPriceList.replaceChildren();
+
+  document.querySelectorAll("[data-social-tab]").forEach(tab => {
+    const active = tab.dataset.socialTab === category;
+    tab.classList.toggle("active", active);
+    tab.setAttribute("aria-selected", String(active));
+  });
+
+  socialPriceData[category].forEach(item => {
+    const row = document.createElement("article");
+    row.className = "social-price-item";
+
+    const info = document.createElement("div");
+
+    const platform = document.createElement("span");
+    platform.className = "social-price-platform";
+    platform.textContent = item.platform;
+
+    const name = document.createElement("div");
+    name.className = "social-price-name";
+    name.textContent = item.name;
+
+    info.append(platform, name);
+
+    if (item.note) {
+      const note = document.createElement("small");
+      note.className = "social-price-note";
+      note.textContent = item.note;
+      info.appendChild(note);
+    }
+
+    const right = document.createElement("div");
+    right.className = "social-price-right";
+
+    const price = document.createElement("strong");
+    price.className = "social-price-amount";
+    price.textContent = item.price;
+
+    const order = document.createElement("a");
+    order.className = "social-price-order";
+    order.textContent = "Pesan via WA";
+    order.target = "_blank";
+    order.rel = "noopener noreferrer";
+
+    const message =
+      `Halo Sannzy Store, saya ingin bertanya/order: ` +
+      `${item.platform} - ${item.name}, harga ${item.price}.`;
+
+    order.href =
+      "https://wa.me/628889868505?text=" +
+      encodeURIComponent(message);
+
+    right.append(price, order);
+    row.append(info, right);
+    socialPriceList.appendChild(row);
+  });
+}
+
+function openSocialPriceModal(category) {
+  if (!socialModal) return;
+
+  renderSocialPrices(category);
+  socialModal.classList.add("open");
+  socialModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("social-modal-open");
+
+  document.getElementById("socialPriceClose")?.focus();
+}
+
+function closeSocialPriceModal() {
+  if (!socialModal) return;
+
+  socialModal.classList.remove("open");
+  socialModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("social-modal-open");
+}
+
+document.querySelectorAll(".social-product").forEach(card => {
+  card.addEventListener("click", () => {
+    openSocialPriceModal(card.dataset.socialCategory);
+  });
+
+  card.addEventListener("keydown", event => {
+    if (
+      event.target === card &&
+      (event.key === "Enter" || event.key === " ")
+    ) {
+      event.preventDefault();
+      openSocialPriceModal(card.dataset.socialCategory);
+    }
+  });
+});
+
+document.querySelectorAll("[data-social-tab]").forEach(tab => {
+  tab.addEventListener("click", () => {
+    renderSocialPrices(tab.dataset.socialTab);
+  });
+});
+
+document.getElementById("socialPriceClose")?.addEventListener(
+  "click",
+  closeSocialPriceModal
+);
+
+socialModal?.querySelector("[data-social-close]")?.addEventListener(
+  "click",
+  closeSocialPriceModal
+);
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeSocialPriceModal();
+  }
+});
+</script>
+</body>
+</html>
+
