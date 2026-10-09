@@ -2124,11 +2124,369 @@ details {
   }
 }
 
+/* =========================================
+   SANNZY STORE — SCRIPT INTRO ANIMASI
+   Tanpa video, responsif, auto masuk ke website
+   ========================================= */
+#sannzyIntro {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at 50% 43%, rgba(37, 99, 235, .24), transparent 34%),
+    radial-gradient(circle at 15% 15%, rgba(56, 189, 248, .10), transparent 26%),
+    linear-gradient(180deg, #071629 0%, #030B17 100%);
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition:
+    opacity 1.15s cubic-bezier(.22, .61, .36, 1),
+    transform 1.15s cubic-bezier(.22, .61, .36, 1),
+    visibility 0s linear 1.15s;
+}
+
+#sannzyIntro.is-exiting {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.025);
+  pointer-events: none;
+}
+
+/* Grid halus seperti panel digital */
+#sannzyIntro .intro-grid {
+  position: absolute;
+  inset: -10%;
+  z-index: -2;
+  background-image:
+    linear-gradient(rgba(96, 165, 250, .075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 165, 250, .075) 1px, transparent 1px),
+    radial-gradient(rgba(191, 219, 254, .5) .8px, transparent .8px);
+  background-size: 58px 58px, 58px 58px, 23px 23px;
+  opacity: .45;
+  mask-image: radial-gradient(ellipse at center, #000 12%, transparent 82%);
+  animation: introGridDrift 18s linear infinite;
+}
+
+#sannzyIntro .intro-orb {
+  position: absolute;
+  z-index: -1;
+  width: min(62vw, 390px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, .18);
+  filter: blur(65px);
+  animation: introOrbFloat 5s ease-in-out infinite alternate;
+}
+
+#sannzyIntro .intro-orb.orb-a {
+  top: 8%;
+  left: -16%;
+}
+
+#sannzyIntro .intro-orb.orb-b {
+  right: -18%;
+  bottom: 8%;
+  width: min(70vw, 430px);
+  background: rgba(56, 189, 248, .14);
+  animation-delay: -2.3s;
+}
+
+#sannzyIntro .intro-content {
+  width: min(100%, 760px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 14px;
+  transform: translateY(12px);
+  opacity: 0;
+  animation: introContentIn .9s .12s cubic-bezier(.16, 1, .3, 1) forwards;
+}
+
+#sannzyIntro .intro-mark {
+  position: relative;
+  width: 72px;
+  height: 82px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 24px;
+  color: #EAF5FF;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  filter: drop-shadow(0 0 18px rgba(56, 189, 248, .3));
+  animation: introMarkFloat 3.8s ease-in-out infinite;
+}
+
+#sannzyIntro .intro-mark::before,
+#sannzyIntro .intro-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0%, 96% 25%, 96% 75%, 50% 100%, 4% 75%, 4% 25%);
+}
+
+#sannzyIntro .intro-mark::before {
+  background: linear-gradient(135deg, #7DD3FC, #2563EB);
+}
+
+#sannzyIntro .intro-mark::after {
+  inset: 3px;
+  background: #071629;
+}
+
+#sannzyIntro .intro-mark span {
+  position: relative;
+  z-index: 1;
+}
+
+#sannzyIntro .intro-kicker {
+  margin: 0 0 13px;
+  color: #7DD3FC;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: introTextIn .7s .35s ease forwards;
+}
+
+#sannzyIntro .intro-title {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .16em;
+  margin: 0;
+  color: #F8FBFF;
+  font-size: clamp(35px, 8.4vw, 76px);
+  font-weight: 950;
+  line-height: .98;
+  letter-spacing: -.075em;
+  text-shadow: 0 8px 35px rgba(0, 0, 0, .25);
+  opacity: 0;
+  animation: introTitleIn .85s .48s cubic-bezier(.16, 1, .3, 1) forwards;
+}
+
+#sannzyIntro .intro-title span {
+  color: #F8FBFF;
+}
+
+#sannzyIntro .intro-title strong {
+  color: transparent;
+  font-weight: inherit;
+  background: linear-gradient(100deg, #BFDBFE 0%, #60A5FA 35%, #2563EB 68%, #38BDF8 86%, #BFDBFE 100%);
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: introBlueFlow 4s linear infinite;
+}
+
+#sannzyIntro .intro-tagline {
+  margin: 17px 0 0;
+  max-width: 520px;
+  color: #BBD0E8;
+  font-size: clamp(13px, 3.4vw, 17px);
+  line-height: 1.7;
+  letter-spacing: .025em;
+  opacity: 0;
+  animation: introTextIn .75s .78s ease forwards;
+}
+
+#sannzyIntro .intro-progress {
+  width: min(230px, 60vw);
+  height: 3px;
+  margin-top: 29px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(147, 197, 253, .16);
+  opacity: 0;
+  animation: introTextIn .5s 1s ease forwards;
+}
+
+#sannzyIntro .intro-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2563EB, #7DD3FC);
+  box-shadow: 0 0 13px rgba(56, 189, 248, .7);
+  animation: introProgressFill 4.6s linear forwards;
+}
+
+#sannzyIntro .intro-enter {
+  position: absolute;
+  left: 50%;
+  bottom: calc(28px + env(safe-area-inset-bottom));
+  transform: translate(-50%, 12px);
+  min-width: 195px;
+  min-height: 54px;
+  padding: 13px 27px;
+  border: 1.5px solid rgba(147, 197, 253, .92);
+  border-radius: 999px;
+  background: rgba(6, 20, 38, .6);
+  color: #E8F4FF;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, .07), inset 0 0 18px rgba(59, 130, 246, .06);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0;
+  animation: introButtonIn .7s 1.15s cubic-bezier(.16, 1, .3, 1) forwards;
+  transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+#sannzyIntro .intro-enter:hover {
+  background: rgba(29, 78, 216, .38);
+  box-shadow: 0 0 24px rgba(56, 189, 248, .18);
+}
+
+#sannzyIntro .intro-enter:active {
+  transform: translate(-50%, 0) scale(.98);
+}
+
+/* Situs utama disiapkan di balik intro, lalu masuk secara lembut */
+.site-header,
+main,
+footer,
+.music-player {
+  transition:
+    opacity 1.05s cubic-bezier(.22, .61, .36, 1),
+    transform 1.05s cubic-bezier(.22, .61, .36, 1);
+}
+
+body.sannzy-intro-active {
+  overflow: hidden;
+}
+
+body.sannzy-intro-active .site-header,
+body.sannzy-intro-active main,
+body.sannzy-intro-active footer,
+body.sannzy-intro-active .music-player {
+  opacity: 0;
+  transform: translateY(15px) scale(.995);
+  pointer-events: none;
+}
+
+#sannzyIntro.is-exiting .intro-content,
+#sannzyIntro.is-exiting .intro-enter {
+  animation: none !important;
+  opacity: 0;
+  transition: opacity .45s ease, transform .75s cubic-bezier(.22, .61, .36, 1);
+}
+
+#sannzyIntro.is-exiting .intro-content {
+  transform: translateY(-18px) scale(.98);
+}
+
+#sannzyIntro.is-exiting .intro-enter {
+  transform: translate(-50%, 18px);
+}
+
+@keyframes introContentIn {
+  from { opacity: 0; transform: translateY(20px) scale(.98); filter: blur(7px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes introTextIn {
+  from { opacity: 0; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes introTitleIn {
+  from { opacity: 0; transform: translateY(17px) scale(.97); filter: blur(5px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes introButtonIn {
+  from { opacity: 0; transform: translate(-50%, 15px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes introMarkFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes introBlueFlow {
+  from { background-position: 0% 50%; }
+  to { background-position: 220% 50%; }
+}
+
+@keyframes introGridDrift {
+  from { background-position: 0 0, 0 0, 0 0; }
+  to { background-position: 58px 58px, -58px 58px, 23px 23px; }
+}
+
+@keyframes introOrbFloat {
+  from { transform: translate3d(-8px, 8px, 0) scale(.92); }
+  to { transform: translate3d(18px, -16px, 0) scale(1.08); }
+}
+
+@keyframes introProgressFill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  #sannzyIntro { padding: 18px; }
+  #sannzyIntro .intro-content { transform: translateY(8px); padding: 10px 0; }
+  #sannzyIntro .intro-mark { width: 62px; height: 70px; margin-bottom: 21px; font-size: 22px; }
+  #sannzyIntro .intro-kicker { font-size: 9px; letter-spacing: .19em; }
+  #sannzyIntro .intro-title { font-size: clamp(35px, 9.2vw, 48px); gap: .13em; letter-spacing: -.075em; }
+  #sannzyIntro .intro-tagline { max-width: 300px; margin-top: 14px; font-size: 13px; }
+  #sannzyIntro .intro-progress { margin-top: 24px; }
+  #sannzyIntro .intro-enter { bottom: calc(26px + env(safe-area-inset-bottom)); min-width: 185px; min-height: 54px; font-size: 15px; }
+  #sannzyIntro .intro-orb { filter: blur(52px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #sannzyIntro *,
+  #sannzyIntro::before,
+  #sannzyIntro::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  #sannzyIntro,
+  .site-header,
+  main,
+  footer,
+  .music-player {
+    transition-duration: .01ms !important;
+  }
+}
+
 </style>
 </head>
 
-<body>
+<body class="sannzy-intro-active">
 
+<!-- SCRIPT INTRO SANNZY STORE: TANPA VIDEO -->
+<div id="sannzyIntro" role="dialog" aria-label="Intro Sannzy Store" aria-modal="true">
+  <div class="intro-grid" aria-hidden="true"></div>
+  <div class="intro-orb orb-a" aria-hidden="true"></div>
+  <div class="intro-orb orb-b" aria-hidden="true"></div>
+
+  <div class="intro-content">
+    <div class="intro-mark" aria-hidden="true"><span>SS</span></div>
+    <p class="intro-kicker">Premium Digital Store</p>
+    <h1 class="intro-title"><span>SANNZY</span><strong>STORE</strong></h1>
+    <p class="intro-tagline">Premium apps &amp; kebutuhan digital, lebih mudah dan praktis.</p>
+    <div class="intro-progress" aria-hidden="true"><span></span></div>
+  </div>
+
+  <button type="button" class="intro-enter" id="sannzyIntroEnter">
+    Masuk ke Website <span aria-hidden="true">→</span>
+  </button>
+</div>
 
 <!-- BACKGROUND SANNZY STORE -->
 <div class="sannzy-moving-bg" aria-hidden="true">
@@ -3934,6 +4292,44 @@ document.addEventListener("keydown", event => {
   }
 });
 </script>
+
+<script>
+(function () {
+  "use strict";
+
+  const intro = document.getElementById("sannzyIntro");
+  const enterButton = document.getElementById("sannzyIntroEnter");
+  if (!intro || !enterButton) return;
+
+  let hasStartedExit = false;
+  let autoEnterTimer;
+
+  // Pastikan halaman utama sudah disiapkan di balik layer intro.
+  document.body.classList.add("sannzy-intro-active");
+
+  function enterMainSite() {
+    if (hasStartedExit) return;
+    hasStartedExit = true;
+    clearTimeout(autoEnterTimer);
+
+    // Kedua perubahan dimulai bersamaan: halaman utama naik/fade-in,
+    // sedangkan intro mengecil dan fade-out, supaya tidak terasa seperti pindah halaman.
+    document.body.classList.remove("sannzy-intro-active");
+    intro.classList.add("is-exiting");
+    enterButton.disabled = true;
+
+    window.setTimeout(function () {
+      if (intro.parentNode) intro.remove();
+    }, 1200);
+  }
+
+  enterButton.addEventListener("click", enterMainSite);
+
+  // Otomatis masuk setelah animasi intro dinikmati beberapa detik.
+  // Pengunjung tetap boleh masuk lebih awal lewat tombol.
+  autoEnterTimer = window.setTimeout(enterMainSite, 4700);
+})();
+</script>
+
 </body>
 </html>
-
