@@ -762,7 +762,7 @@ footer{border-top:1px solid var(--line);margin-top:75px;padding:50px 0 30px}
    WARNA MULTICOLOR SEPERTI REFERENSI
    ===================================================== */
 
-.sannzy-right-logo{
+.sannzy-right-logo{ 
 
     color:transparent !important;
 
@@ -947,6 +947,305 @@ footer{border-top:1px solid var(--line);margin-top:75px;padding:50px 0 30px}
     color:#bb82f2;
 
 }
+
+
+/* ==========================================
+   SANNZY STORE — MOBILE RESPONSIVE
+   Hanya berlaku untuk layar HP.
+   Tampilan desktop tidak diubah.
+   ========================================== */
+
+@media screen and (max-width: 720px) {
+
+  /* 1. HEADER MOBILE */
+  .site-header {
+    height: 76px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(13, 9, 19, 0.97);
+    backdrop-filter: blur(16px);
+  }
+
+  .site-header .container {
+    width: calc(100% - 28px);
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: clamp(17px, 4.8vw, 21px);
+    letter-spacing: -1px;
+    white-space: nowrap;
+  }
+
+  .menu {
+    display: block;
+    flex-shrink: 0;
+    font-size: 25px;
+  }
+
+  /* 2. MENU HAMBURGER */
+  .mobile-menu {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 14px;
+    right: 14px;
+    z-index: 1001;
+    display: none;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #160e20;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+  }
+
+  .mobile-menu.open {
+    display: grid;
+    gap: 4px;
+  }
+
+  .mobile-menu a {
+    display: block;
+    padding: 13px 12px;
+    border-radius: 9px;
+    color: #d8c9e5;
+    font-size: 15px;
+  }
+
+  .mobile-menu a:active {
+    background: rgba(166, 107, 234, 0.15);
+  }
+
+  /* 3. JARAK ANTAR BAGIAN */
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  section {
+    scroll-margin-top: 90px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 54px;
+    padding-bottom: 55px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+  }
+
+  .hero-copy {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .hero h1 {
+    margin: 16px 0 14px;
+    font-size: clamp(39px, 10vw, 55px);
+    line-height: 1.03;
+    letter-spacing: -2px;
+    overflow-wrap: anywhere;
+  }
+
+  .hero h2 {
+    font-size: clamp(21px, 5.5vw, 27px);
+    line-height: 1.4;
+    margin: 0 0 16px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* 4. TOMBOL HERO */
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 11px;
+    margin-top: 24px;
+  }
+
+  .actions a,
+  .actions button {
+    width: 100%;
+    min-height: 54px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .status {
+    margin-top: 20px;
+    line-height: 1.7;
+  }
+
+  /* 5. LOGO BESAR SEBELAH KANAN */
+  .hero-art {
+    width: 100%;
+    min-width: 0;
+    min-height: 270px;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .hero-logo {
+    max-width: 100%;
+    font-size: clamp(31px, 8.5vw, 45px);
+    letter-spacing: -2px;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-domain {
+    top: 60%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateX(-50%);
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .hero-stat {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 32px;
+  }
+
+  /* 6. GRID STATISTIK DAN PRODUK */
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .service-grid,
+  .product-grid,
+  .contact-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .stats-grid > *,
+  .service-grid > *,
+  .product-grid > *,
+  .contact-list > * {
+    min-width: 0;
+  }
+
+  /* 7. JUDUL SETIAP SECTION */
+  .section-head,
+  .why-grid,
+  .contact-grid,
+  .faq-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .section-head h2,
+  .why h2,
+  .contact h2,
+  .faq-grid h2 {
+    font-size: clamp(31px, 8vw, 39px);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+  }
+
+  .service,
+  .why,
+  .quick,
+  .contact-panel {
+    padding: 23px 20px;
+    min-width: 0;
+  }
+
+  /* 8. FAQ */
+  .faq-grid details summary {
+    gap: 12px;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .answer-box {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* 9. FOOTER */
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  /* 10. PEMUTAR MUSIK MELAYANG */
+  .music-player {
+    position: fixed;
+    left: auto;
+    right: 12px;
+    bottom: 12px;
+    z-index: 900;
+    width: min(310px, calc(100vw - 24px));
+    max-width: calc(100vw - 24px);
+  }
+
+  /* 11. KONTEN TIDAK MELEBAR KE SAMPING */
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  .hero-grid > *,
+  .section-head > *,
+  .why-grid > *,
+  .contact-grid > *,
+  .faq-grid > * {
+    min-width: 0;
+  }
+
+  /* 12. HORMATI PENGATURAN REDUKSI ANIMASI */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* HP KECIL */
+@media screen and (max-width: 380px) {
+  .stats-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 37px;
+    letter-spacing: -1.5px;
+  }
+
+  .service,
+  .why,
+  .quick,
+  .contact-panel {
+    padding: 20px 16px;
+  }
+}
+
 </style>
 </head>
 
