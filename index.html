@@ -2143,17 +2143,17 @@ details {
     linear-gradient(180deg, #071629 0%, #030B17 100%);
   opacity: 1;
   visibility: visible;
-  transform: scale(1);
+  transform: none;
+  will-change: opacity;
   transition:
-    opacity 1.15s cubic-bezier(.22, .61, .36, 1),
-    transform 1.15s cubic-bezier(.22, .61, .36, 1),
-    visibility 0s linear 1.15s;
+    opacity .82s cubic-bezier(.22, .61, .36, 1),
+    visibility 0s linear .82s;
 }
 
 #sannzyIntro.is-exiting {
   opacity: 0;
   visibility: hidden;
-  transform: scale(1.025);
+  transform: none;
   pointer-events: none;
 }
 
@@ -2167,9 +2167,10 @@ details {
     linear-gradient(90deg, rgba(96, 165, 250, .075) 1px, transparent 1px),
     radial-gradient(rgba(191, 219, 254, .5) .8px, transparent .8px);
   background-size: 58px 58px, 58px 58px, 23px 23px;
-  opacity: .45;
+  opacity: .30;
   mask-image: radial-gradient(ellipse at center, #000 12%, transparent 82%);
-  animation: introGridDrift 18s linear infinite;
+  /* Latar grid dibuat statis agar browser tidak repaint layar setiap frame. */
+  animation: none;
 }
 
 #sannzyIntro .intro-orb {
@@ -2179,8 +2180,9 @@ details {
   aspect-ratio: 1;
   border-radius: 50%;
   background: rgba(37, 99, 235, .18);
-  filter: blur(65px);
-  animation: introOrbFloat 5s ease-in-out infinite alternate;
+  filter: blur(44px);
+  animation: introOrbFloat 7s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 #sannzyIntro .intro-orb.orb-a {
@@ -2205,7 +2207,7 @@ details {
   padding: 14px;
   transform: translateY(12px);
   opacity: 0;
-  animation: introContentIn .9s .12s cubic-bezier(.16, 1, .3, 1) forwards;
+  animation: introContentIn .72s .08s cubic-bezier(.16, 1, .3, 1) forwards;
 }
 
 #sannzyIntro .intro-mark {
@@ -2270,7 +2272,7 @@ details {
   letter-spacing: -.075em;
   text-shadow: 0 8px 35px rgba(0, 0, 0, .25);
   opacity: 0;
-  animation: introTitleIn .85s .48s cubic-bezier(.16, 1, .3, 1) forwards;
+  animation: introTitleIn .72s .35s cubic-bezier(.16, 1, .3, 1) forwards;
 }
 
 #sannzyIntro .intro-title span {
@@ -2296,7 +2298,7 @@ details {
   line-height: 1.7;
   letter-spacing: .025em;
   opacity: 0;
-  animation: introTextIn .75s .78s ease forwards;
+  animation: introTextIn .62s .62s ease forwards;
 }
 
 #sannzyIntro .intro-progress {
@@ -2307,16 +2309,18 @@ details {
   border-radius: 99px;
   background: rgba(147, 197, 253, .16);
   opacity: 0;
-  animation: introTextIn .5s 1s ease forwards;
+  animation: introTextIn .45s .78s ease forwards;
 }
 
 #sannzyIntro .intro-progress span {
   display: block;
-  width: 0;
+  width: 100%;
   height: 100%;
   border-radius: inherit;
   background: linear-gradient(90deg, #2563EB, #7DD3FC);
-  box-shadow: 0 0 13px rgba(56, 189, 248, .7);
+  box-shadow: 0 0 13px rgba(56, 189, 248, .45);
+  transform: scaleX(0);
+  transform-origin: left center;
   animation: introProgressFill 4.6s linear forwards;
 }
 
@@ -2340,7 +2344,7 @@ details {
   white-space: nowrap;
   cursor: pointer;
   opacity: 0;
-  animation: introButtonIn .7s 1.15s cubic-bezier(.16, 1, .3, 1) forwards;
+  animation: introButtonIn .62s .9s cubic-bezier(.16, 1, .3, 1) forwards;
   transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 
@@ -2359,8 +2363,8 @@ main,
 footer,
 .music-player {
   transition:
-    opacity 1.05s cubic-bezier(.22, .61, .36, 1),
-    transform 1.05s cubic-bezier(.22, .61, .36, 1);
+    opacity .78s cubic-bezier(.22, .61, .36, 1),
+    transform .78s cubic-bezier(.22, .61, .36, 1);
 }
 
 body.sannzy-intro-active {
@@ -2372,7 +2376,7 @@ body.sannzy-intro-active main,
 body.sannzy-intro-active footer,
 body.sannzy-intro-active .music-player {
   opacity: 0;
-  transform: translateY(15px) scale(.995);
+  transform: translateY(8px);
   pointer-events: none;
 }
 
@@ -2380,20 +2384,20 @@ body.sannzy-intro-active .music-player {
 #sannzyIntro.is-exiting .intro-enter {
   animation: none !important;
   opacity: 0;
-  transition: opacity .45s ease, transform .75s cubic-bezier(.22, .61, .36, 1);
+  transition: opacity .55s ease, transform .65s cubic-bezier(.22, .61, .36, 1);
 }
 
 #sannzyIntro.is-exiting .intro-content {
-  transform: translateY(-18px) scale(.98);
+  transform: translateY(-10px);
 }
 
 #sannzyIntro.is-exiting .intro-enter {
-  transform: translate(-50%, 18px);
+  transform: translate(-50%, 12px);
 }
 
 @keyframes introContentIn {
-  from { opacity: 0; transform: translateY(20px) scale(.98); filter: blur(7px); }
-  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes introTextIn {
@@ -2402,8 +2406,8 @@ body.sannzy-intro-active .music-player {
 }
 
 @keyframes introTitleIn {
-  from { opacity: 0; transform: translateY(17px) scale(.97); filter: blur(5px); }
-  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes introButtonIn {
@@ -2432,8 +2436,8 @@ body.sannzy-intro-active .music-player {
 }
 
 @keyframes introProgressFill {
-  from { width: 0; }
-  to { width: 100%; }
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 @media (max-width: 600px) {
@@ -4485,15 +4489,15 @@ document.addEventListener("keydown", event => {
     hasStartedExit = true;
     clearTimeout(autoEnterTimer);
 
-    // Kedua perubahan dimulai bersamaan: halaman utama naik/fade-in,
-    // sedangkan intro mengecil dan fade-out, supaya tidak terasa seperti pindah halaman.
+    // Crossfade ringan: halaman utama dan intro berubah bersamaan,
+    // tanpa blur/scale besar agar lebih stabil pada perangkat yang lambat.
     document.body.classList.remove("sannzy-intro-active");
     intro.classList.add("is-exiting");
     enterButton.disabled = true;
 
     window.setTimeout(function () {
       if (intro.parentNode) intro.remove();
-    }, 1200);
+    }, 900);
   }
 
   enterButton.addEventListener("click", enterMainSite);
