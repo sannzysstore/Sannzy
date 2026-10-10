@@ -2464,6 +2464,179 @@ body.sannzy-intro-active .music-player {
   }
 }
 
+
+
+/* =====================================================
+   SANNZY STORE — INTERAKSI HOVER BIRU
+   Efek halus saat kursor mengarah ke tombol dan kartu.
+   ===================================================== */
+@media (hover: hover) and (pointer: fine) {
+  .btn,
+  .nav-auto,
+  .nav-group,
+  .language-switch,
+  .quick-link,
+  .contact-card,
+  .product,
+  .stat-card,
+  .panel,
+  .testimonial-item,
+  .social-price-tab,
+  .social-price-button,
+  .social-price-order,
+  .mobile-menu a,
+  .footer-links a {
+    transition:
+      transform .24s cubic-bezier(.2, .75, .25, 1),
+      box-shadow .28s ease,
+      border-color .25s ease,
+      background-color .25s ease,
+      color .2s ease,
+      filter .25s ease;
+  }
+
+  /* Tombol utama: sedikit terangkat, lebih terang, dan bercahaya */
+  .btn:hover,
+  .nav-auto:hover,
+  .nav-group:hover,
+  .social-price-order:hover,
+  .social-price-tab:hover,
+  .social-price-button:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.09);
+    box-shadow: 0 10px 28px rgba(37, 99, 235, .25),
+                0 0 0 1px rgba(96, 165, 250, .16);
+  }
+
+  .btn-primary:hover,
+  .social-price-order:hover,
+  .social-price-tab.active:hover {
+    background: linear-gradient(135deg, #60A5FA, #2563EB) !important;
+    border-color: #93C5FD !important;
+  }
+
+  .btn-secondary:hover,
+  .btn-ghost:hover,
+  .btn-group:hover {
+    border-color: #60A5FA !important;
+    background: #153963 !important;
+    color: #FFFFFF !important;
+  }
+
+  /* Tautan navigasi mendapat garis bawah biru yang muncul saat hover */
+  .nav-links a:not(.nav-auto):not(.nav-group) {
+    position: relative;
+    transition: color .2s ease;
+  }
+
+  .nav-links a:not(.nav-auto):not(.nav-group)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -7px;
+    height: 2px;
+    border-radius: 2px;
+    background: #38BDF8;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .24s ease;
+  }
+
+  .nav-links a:not(.nav-auto):not(.nav-group):hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Kartu layanan, produk, testimoni, dan kontak terangkat seperti referensi */
+  .product:hover,
+  .stat-card:hover,
+  .panel:hover,
+  .testimonial-item:hover,
+  .quick-link:hover,
+  .contact-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, .78) !important;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, .24),
+                0 0 22px rgba(37, 99, 235, .13);
+  }
+
+  .product:hover,
+  .stat-card:hover,
+  .panel:hover,
+  .quick-link:hover,
+  .contact-card:hover {
+    background-color: rgba(14, 48, 83, .98) !important;
+  }
+
+  .product-art {
+    transition: transform .3s cubic-bezier(.2, .75, .25, 1),
+                filter .3s ease;
+  }
+
+  .product:hover .product-art {
+    transform: scale(1.035);
+    filter: brightness(1.08);
+  }
+
+  .product a,
+  .quick-link i,
+  .contact-card i {
+    display: inline-block;
+    transition: transform .22s ease, color .22s ease;
+  }
+
+  .product a:hover {
+    transform: translateX(3px);
+    color: #93C5FD !important;
+  }
+
+  .quick-link:hover i,
+  .contact-card:hover i {
+    transform: translate(3px, -2px);
+    color: #38BDF8 !important;
+  }
+
+  .mobile-menu a:hover,
+  .footer-links a:hover {
+    color: #7DD3FC !important;
+  }
+}
+
+/* Efek fokus untuk navigasi keyboard */
+.btn:focus-visible,
+.nav-auto:focus-visible,
+.nav-group:focus-visible,
+.quick-link:focus-visible,
+.contact-card:focus-visible,
+.product a:focus-visible,
+.language-switch:focus-visible {
+  outline: 2px solid #38BDF8;
+  outline-offset: 4px;
+}
+
+/* Kurangi gerakan jika pengguna mengaktifkan Reduce Motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .nav-auto,
+  .nav-group,
+  .language-switch,
+  .quick-link,
+  .contact-card,
+  .product,
+  .product-art,
+  .stat-card,
+  .panel,
+  .testimonial-item,
+  .social-price-tab,
+  .social-price-button,
+  .social-price-order,
+  .mobile-menu a,
+  .footer-links a,
+  .nav-links a::after {
+    transition: none !important;
+  }
+}
+
 </style>
 </head>
 
